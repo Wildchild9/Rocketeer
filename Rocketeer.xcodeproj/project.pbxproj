@@ -64,6 +64,7 @@
 		C260C7C824D9DE46003F68AE /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		C260C7CA24D9E083003F68AE /* StringProtocol+firstMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+firstMatch.swift"; sourceTree = "<group>"; };
 		C2B94EFF24D9F444009829EB /* loadLaunchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadLaunchData.swift; sourceTree = "<group>"; };
+		C2B94F0124DA054D009829EB /* Rocketeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rocketeer.entitlements; sourceTree = "<group>"; };
 		C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+doesMatch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +158,7 @@
 			children = (
 				C208648824D9C6EF00B22682 /* Assets.xcassets */,
 				C208648D24D9C6EF00B22682 /* Info.plist */,
+				C2B94F0124DA054D009829EB /* Rocketeer.entitlements */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -497,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Rocketeer/Resources/Rocketeer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Rocketeer/Preview Content\"";
 				DEVELOPMENT_TEAM = BLAVQ37GJV;
@@ -519,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Rocketeer/Resources/Rocketeer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Rocketeer/Preview Content\"";
 				DEVELOPMENT_TEAM = BLAVQ37GJV;
