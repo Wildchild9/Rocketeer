@@ -13,6 +13,7 @@
 		C208648C24D9C6EF00B22682 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208648B24D9C6EF00B22682 /* Preview Assets.xcassets */; };
 		C208649724D9C6F000B22682 /* RocketeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208649624D9C6F000B22682 /* RocketeerTests.swift */; };
 		C20864A224D9C6F000B22682 /* RocketeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20864A124D9C6F000B22682 /* RocketeerUITests.swift */; };
+		C25106A824D9CA9D00256231 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106A724D9CA9C00256231 /* Mission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C208649D24D9C6F000B22682 /* RocketeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20864A124D9C6F000B22682 /* RocketeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketeerUITests.swift; sourceTree = "<group>"; };
 		C20864A324D9C6F000B22682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C25106A724D9CA9C00256231 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				C208648424D9C6EC00B22682 /* RocketeerApp.swift */,
 				C208648624D9C6EC00B22682 /* ContentView.swift */,
+				C25106A724D9CA9C00256231 /* Mission.swift */,
 				C20864AF24D9C74B00B22682 /* Resources */,
 				C208648A24D9C6EF00B22682 /* Preview Content */,
 			);
@@ -267,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25106A824D9CA9D00256231 /* Mission.swift in Sources */,
 				C208648724D9C6EC00B22682 /* ContentView.swift in Sources */,
 				C208648524D9C6EC00B22682 /* RocketeerApp.swift in Sources */,
 			);
