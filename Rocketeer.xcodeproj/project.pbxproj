@@ -108,11 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				C208648424D9C6EC00B22682 /* RocketeerApp.swift */,
-				C208648624D9C6EC00B22682 /* ContentView.swift */,
-				C25106AC24D9CF3500256231 /* MissionRow.swift */,
-				C25106B024D9CF9700256231 /* Field.swift */,
-				C25106B224D9CFEF00256231 /* MissionView.swift */,
-				C25106A724D9CA9C00256231 /* Mission.swift */,
+				C25106B624D9D2CF00256231 /* Views */,
+				C2EB116A24D9D36300F28C5C /* Model */,
 				C25106A924D9CBBB00256231 /* Extensions */,
 				C20864AF24D9C74B00B22682 /* Resources */,
 				C208648A24D9C6EF00B22682 /* Preview Content */,
@@ -162,6 +159,25 @@
 				C25106B424D9D23700256231 /* String+removeHtmlSpecialCharacters.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C25106B624D9D2CF00256231 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C208648624D9C6EC00B22682 /* ContentView.swift */,
+				C25106AC24D9CF3500256231 /* MissionRow.swift */,
+				C25106B224D9CFEF00256231 /* MissionView.swift */,
+				C25106B024D9CF9700256231 /* Field.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2EB116A24D9D36300F28C5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C25106A724D9CA9C00256231 /* Mission.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
