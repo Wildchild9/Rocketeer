@@ -97,8 +97,7 @@
 			children = (
 				C208648424D9C6EC00B22682 /* RocketeerApp.swift */,
 				C208648624D9C6EC00B22682 /* ContentView.swift */,
-				C208648824D9C6EF00B22682 /* Assets.xcassets */,
-				C208648D24D9C6EF00B22682 /* Info.plist */,
+				C20864AF24D9C74B00B22682 /* Resources */,
 				C208648A24D9C6EF00B22682 /* Preview Content */,
 			);
 			path = Rocketeer;
@@ -128,6 +127,15 @@
 				C20864A324D9C6F000B22682 /* Info.plist */,
 			);
 			path = RocketeerUITests;
+			sourceTree = "<group>";
+		};
+		C20864AF24D9C74B00B22682 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C208648824D9C6EF00B22682 /* Assets.xcassets */,
+				C208648D24D9C6EF00B22682 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,7 +429,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Rocketeer/Preview Content\"";
 				DEVELOPMENT_TEAM = BLAVQ37GJV;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Rocketeer/Info.plist;
+				INFOPLIST_FILE = Rocketeer/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -443,7 +451,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Rocketeer/Preview Content\"";
 				DEVELOPMENT_TEAM = BLAVQ37GJV;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Rocketeer/Info.plist;
+				INFOPLIST_FILE = Rocketeer/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
