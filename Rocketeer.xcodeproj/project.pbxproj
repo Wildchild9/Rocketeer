@@ -21,6 +21,7 @@
 		C25106B524D9D23700256231 /* String+removeHtmlSpecialCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106B424D9D23700256231 /* String+removeHtmlSpecialCharacters.swift */; };
 		C260C7C924D9DE46003F68AE /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260C7C824D9DE46003F68AE /* Regex.swift */; };
 		C260C7CB24D9E083003F68AE /* StringProtocol+firstMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260C7CA24D9E083003F68AE /* StringProtocol+firstMatch.swift */; };
+		C2B94F0024D9F444009829EB /* loadLaunchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B94EFF24D9F444009829EB /* loadLaunchData.swift */; };
 		C2EB116C24D9D80400F28C5C /* String+doesMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		C25106B424D9D23700256231 /* String+removeHtmlSpecialCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+removeHtmlSpecialCharacters.swift"; sourceTree = "<group>"; };
 		C260C7C824D9DE46003F68AE /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		C260C7CA24D9E083003F68AE /* StringProtocol+firstMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+firstMatch.swift"; sourceTree = "<group>"; };
+		C2B94EFF24D9F444009829EB /* loadLaunchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadLaunchData.swift; sourceTree = "<group>"; };
 		C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+doesMatch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				C25106A724D9CA9C00256231 /* Mission.swift */,
+				C2B94EFF24D9F444009829EB /* loadLaunchData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				C260C7C924D9DE46003F68AE /* Regex.swift in Sources */,
 				C25106B524D9D23700256231 /* String+removeHtmlSpecialCharacters.swift in Sources */,
 				C2EB116C24D9D80400F28C5C /* String+doesMatch.swift in Sources */,
+				C2B94F0024D9F444009829EB /* loadLaunchData.swift in Sources */,
 				C25106AD24D9CF3500256231 /* MissionRow.swift in Sources */,
 				C25106A824D9CA9D00256231 /* Mission.swift in Sources */,
 				C208648724D9C6EC00B22682 /* ContentView.swift in Sources */,
