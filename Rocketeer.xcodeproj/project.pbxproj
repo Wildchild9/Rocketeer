@@ -20,6 +20,7 @@
 		C25106B324D9CFEF00256231 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106B224D9CFEF00256231 /* MissionView.swift */; };
 		C25106B524D9D23700256231 /* String+removeHtmlSpecialCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106B424D9D23700256231 /* String+removeHtmlSpecialCharacters.swift */; };
 		C260C7C924D9DE46003F68AE /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260C7C824D9DE46003F68AE /* Regex.swift */; };
+		C260C7CB24D9E083003F68AE /* StringProtocol+firstMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260C7CA24D9E083003F68AE /* StringProtocol+firstMatch.swift */; };
 		C2EB116C24D9D80400F28C5C /* String+doesMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		C25106B224D9CFEF00256231 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		C25106B424D9D23700256231 /* String+removeHtmlSpecialCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+removeHtmlSpecialCharacters.swift"; sourceTree = "<group>"; };
 		C260C7C824D9DE46003F68AE /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		C260C7CA24D9E083003F68AE /* StringProtocol+firstMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+firstMatch.swift"; sourceTree = "<group>"; };
 		C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+doesMatch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				C25106AA24D9CBCE00256231 /* String+matches.swift */,
+				C260C7CA24D9E083003F68AE /* StringProtocol+firstMatch.swift */,
 				C25106B424D9D23700256231 /* String+removeHtmlSpecialCharacters.swift */,
 				C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */,
 			);
@@ -331,6 +334,7 @@
 				C25106A824D9CA9D00256231 /* Mission.swift in Sources */,
 				C208648724D9C6EC00B22682 /* ContentView.swift in Sources */,
 				C25106AB24D9CBCE00256231 /* String+matches.swift in Sources */,
+				C260C7CB24D9E083003F68AE /* StringProtocol+firstMatch.swift in Sources */,
 				C25106B124D9CF9700256231 /* Field.swift in Sources */,
 				C208648524D9C6EC00B22682 /* RocketeerApp.swift in Sources */,
 			);
