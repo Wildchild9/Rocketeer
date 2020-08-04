@@ -54,4 +54,10 @@ struct Mission: Identifiable, Codable {
             return Image("rocket-icon")
         }
     }
+    var exactTime: String {
+        if let time = launchTime.firstMatch(of: #"\d+:\d+ (a.m.|p.m.)"#) {
+            return String(time)
+        }
+        return launchTime
+    }
 }
