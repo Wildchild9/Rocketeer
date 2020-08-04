@@ -30,7 +30,7 @@ struct ContentView: View {
         } catch {
             return
         }
-        let matches = contents.matches(pattern: #"(?<=<div class="datename"><span class="launchdate">)(.|\n)+?<div class="missdescrip">(.|\n)+?</div>"#)
+        let matches = contents.matches(for: #"(?<=<div class="datename"><span class="launchdate">)(.|\n)+?<div class="missdescrip">(.|\n)+?</div>"#)
         for match in matches {
             let date = String(match.prefix { $0 != "<" }).removeHtmlSpecialCharacters()
             
