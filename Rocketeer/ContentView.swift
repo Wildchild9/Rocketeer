@@ -23,7 +23,7 @@ struct ContentView: View {
         }
     }
     
-    func loadLaunchData() {
+    private func loadLaunchData() {
         var contents = ""
         do {
             try contents = String(contentsOf: url!)
@@ -63,13 +63,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-fileprivate extension String {
-    func removeHtmlSpecialCharacters() -> String {
-        var str = replacingOccurrences(of: "&#8217;", with: "'")
-        str = str.replacingOccurrences(of: "&#038;", with: "&")
-        str = str.replacingOccurrences(of: "&#8220;", with: "\"")
-        str = str.replacingOccurrences(of: "&#8221;", with: "\"")
-        str = str.replacingOccurrences(of: "<(.+?)>(.+?)</\\1>", with: "$2", options: .regularExpression)
-        return str
-    }
-}
