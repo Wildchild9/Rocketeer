@@ -12,7 +12,15 @@ struct ContentView: View {
     @State var missions: [Mission] = []
     
     var body: some View {
-        Text("Hello, world!").padding()
+        NavigationView {
+            List(missions) { mission in
+                MissionRow(mission: mission)
+            }
+            .navigationTitle("Launches")
+        }
+        .onAppear {
+            loadLaunchData()
+        }
     }
     
     func loadLaunchData() {
