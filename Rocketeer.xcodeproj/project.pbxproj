@@ -17,6 +17,7 @@
 		C25106AB24D9CBCE00256231 /* String+matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AA24D9CBCE00256231 /* String+matches.swift */; };
 		C25106AD24D9CF3500256231 /* MissionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AC24D9CF3500256231 /* MissionRow.swift */; };
 		C25106B124D9CF9700256231 /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106B024D9CF9700256231 /* Field.swift */; };
+		C25106B324D9CFEF00256231 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106B224D9CFEF00256231 /* MissionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C25106AA24D9CBCE00256231 /* String+matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+matches.swift"; sourceTree = "<group>"; };
 		C25106AC24D9CF3500256231 /* MissionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRow.swift; sourceTree = "<group>"; };
 		C25106B024D9CF9700256231 /* Field.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		C25106B224D9CFEF00256231 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				C208648624D9C6EC00B22682 /* ContentView.swift */,
 				C25106AC24D9CF3500256231 /* MissionRow.swift */,
 				C25106B024D9CF9700256231 /* Field.swift */,
+				C25106B224D9CFEF00256231 /* MissionView.swift */,
 				C25106A724D9CA9C00256231 /* Mission.swift */,
 				C25106A924D9CBBB00256231 /* Extensions */,
 				C20864AF24D9C74B00B22682 /* Resources */,
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25106B324D9CFEF00256231 /* MissionView.swift in Sources */,
 				C25106AD24D9CF3500256231 /* MissionRow.swift in Sources */,
 				C25106A824D9CA9D00256231 /* Mission.swift in Sources */,
 				C208648724D9C6EC00B22682 /* ContentView.swift in Sources */,

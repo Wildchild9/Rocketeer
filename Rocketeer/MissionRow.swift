@@ -11,7 +11,7 @@ struct MissionRow: View {
     var mission: Mission
     
     var body: some View {
-        NavigationLink(destination: EmptyView()) {
+        NavigationLink(destination: MissionView(mission: mission)) {
             HStack {
                 VStack(alignment: .leading) {
                     Text(mission.rocket)
