@@ -52,7 +52,6 @@ struct ContentView: View {
                                   description: missionDescription)
             
             missions.append(mission)
-            print(mission)
         }
     }
 }
