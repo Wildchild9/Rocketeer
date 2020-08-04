@@ -8,8 +8,8 @@
 import Foundation
 
 extension StringProtocol where Index == String.Index {
-    func firstMatch<Pattern: StringProtocol>(of pattern: Pattern, options: String.CompareOptions = []) -> SubSequence? {
-        if let matchRange = range(of: pattern, options: options, range: nil, locale: nil) {
+    func firstMatch<Pattern: StringProtocol>(of pattern: Pattern) -> SubSequence? {
+        if let matchRange = range(of: pattern, options: .regularExpression, range: nil, locale: nil) {
             return self[matchRange]
         } else {
             return nil
