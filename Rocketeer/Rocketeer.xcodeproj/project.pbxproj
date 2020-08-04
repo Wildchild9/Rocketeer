@@ -14,6 +14,7 @@
 		C208649724D9C6F000B22682 /* RocketeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208649624D9C6F000B22682 /* RocketeerTests.swift */; };
 		C20864A224D9C6F000B22682 /* RocketeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20864A124D9C6F000B22682 /* RocketeerUITests.swift */; };
 		C25106A824D9CA9D00256231 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106A724D9CA9C00256231 /* Mission.swift */; };
+		C25106AB24D9CBCE00256231 /* String+matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AA24D9CBCE00256231 /* String+matches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C20864A124D9C6F000B22682 /* RocketeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketeerUITests.swift; sourceTree = "<group>"; };
 		C20864A324D9C6F000B22682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C25106A724D9CA9C00256231 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		C25106AA24D9CBCE00256231 /* String+matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+matches.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		C208648324D9C6EC00B22682 /* Rocketeer */ = {
 			isa = PBXGroup;
 			children = (
+				C25106A924D9CBBB00256231 /* Extensions */,
 				C208648424D9C6EC00B22682 /* RocketeerApp.swift */,
 				C208648624D9C6EC00B22682 /* ContentView.swift */,
 				C25106A724D9CA9C00256231 /* Mission.swift */,
@@ -139,6 +142,14 @@
 				C208648D24D9C6EF00B22682 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C25106A924D9CBBB00256231 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C25106AA24D9CBCE00256231 /* String+matches.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 			files = (
 				C25106A824D9CA9D00256231 /* Mission.swift in Sources */,
 				C208648724D9C6EC00B22682 /* ContentView.swift in Sources */,
+				C25106AB24D9CBCE00256231 /* String+matches.swift in Sources */,
 				C208648524D9C6EC00B22682 /* RocketeerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
