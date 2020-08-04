@@ -29,6 +29,8 @@
 		C2B94F1324DA06D6009829EB /* RocketeerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C2B94F0F24DA06D4009829EB /* RocketeerWidget.intentdefinition */; };
 		C2B94F1424DA06D6009829EB /* RocketeerWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = C2B94F0F24DA06D4009829EB /* RocketeerWidget.intentdefinition */; };
 		C2B94F1724DA06D6009829EB /* RocketeerWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C2B94F0624DA06D4009829EB /* RocketeerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C2B94F1C24DA0798009829EB /* loadLaunchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B94EFF24D9F444009829EB /* loadLaunchData.swift */; };
+		C2B94F1D24DA079C009829EB /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106A724D9CA9C00256231 /* Mission.swift */; };
 		C2EB116C24D9D80400F28C5C /* String+doesMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +102,7 @@
 		C2B94F0F24DA06D4009829EB /* RocketeerWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = RocketeerWidget.intentdefinition; sourceTree = "<group>"; };
 		C2B94F1024DA06D6009829EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2B94F1224DA06D6009829EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2B94F1E24DA07B8009829EB /* RocketeerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RocketeerWidgetExtension.entitlements; sourceTree = "<group>"; };
 		C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+doesMatch.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +143,7 @@
 		C208647824D9C6EC00B22682 = {
 			isa = PBXGroup;
 			children = (
+				C2B94F1E24DA07B8009829EB /* RocketeerWidgetExtension.entitlements */,
 				C208648324D9C6EC00B22682 /* Rocketeer */,
 				C208649524D9C6F000B22682 /* RocketeerTests */,
 				C20864A024D9C6F000B22682 /* RocketeerUITests */,
@@ -466,6 +470,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B94F1324DA06D6009829EB /* RocketeerWidget.intentdefinition in Sources */,
+				C2B94F1C24DA0798009829EB /* loadLaunchData.swift in Sources */,
+				C2B94F1D24DA079C009829EB /* Mission.swift in Sources */,
 				C2B94F0E24DA06D4009829EB /* RocketeerWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,6 +750,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RocketeerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLAVQ37GJV;
 				INFOPLIST_FILE = RocketeerWidget/Info.plist;
@@ -765,6 +772,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = RocketeerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLAVQ37GJV;
 				INFOPLIST_FILE = RocketeerWidget/Info.plist;
