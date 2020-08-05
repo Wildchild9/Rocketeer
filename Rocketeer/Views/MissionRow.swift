@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MissionRow: View {
     var mission: Mission
-    @State var favorited = true
+	@State var favorited = true ? "star" : "star.fill"
     var body: some View {
         NavigationLink(destination: MissionView(mission: mission)) {
             HStack {
@@ -37,6 +37,7 @@ struct MissionRow: View {
         }
 		.contextMenu(){
 			HStack{
+				
 				
 			}
 		}
