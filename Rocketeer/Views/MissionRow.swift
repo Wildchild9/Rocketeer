@@ -43,6 +43,11 @@ struct MissionRow: View {
 					Text(favourited ? "Unfavourite" : "Favourite")
 					Image(systemName: favourited ? "star" : "star.fill")
 					   }
+				NavigationLink(destination: MissionView(mission: mission)
+							   , label: {
+								Text("More Info")
+								Image(systemName: "info.circle")
+					   })
 				
 			}
 		}
