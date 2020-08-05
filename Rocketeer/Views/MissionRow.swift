@@ -36,7 +36,7 @@ struct MissionRow: View {
 				Button(action: {
 					favourited.toggle()
 				}) {
-					Text(favourited ? "Unfavourite" : "favourite")
+					Text(favourited ? "Unfavourite" : "Favourite")
 					Image(systemName: favourited ? "star" : "star.fill")
 					   }
 				
