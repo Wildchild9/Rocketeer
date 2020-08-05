@@ -21,10 +21,36 @@ struct ContentView: View {
 				LinearGradient(gradient: Gradient(colors: [Color("bg-grad-start"), Color("bg-grad-end")]), startPoint: .leading, endPoint: .trailing)
 					.edgesIgnoringSafeArea(.all)
 				ScrollView{
-					Spacer(minLength:30)
-					ForEach(missions.filter{$0.date.lowercased().contains("aug")}) { mission in
-						MissionRow(mission: mission)
+					VStack(alignment:.leading) {
+						Text("This Month")
+							.font(.title)
+							.bold()
+							.padding(.horizontal, 30)
+							.padding(.top, 30)
+							.padding(.bottom, 20)
+						ForEach(missions.filter{$0.date.lowercased().contains(currentMonth)}) { mission in
+							MissionRow(mission: mission)
+						}
+						Text("Later")
+							.font(.title)
+							.bold()
+							.padding(.horizontal, 30)
+							.padding(.top, 30)
+							.padding(.bottom, 20)
+						ForEach(missions.filter{!$0.date.lowercased().contains(currentMonth) && !$0.date.lowercased().contains("tbd")}) { mission in
+							MissionRow(mission: mission)
+						}
+						Text("TBD")
+							.font(.title)
+							.bold()
+							.padding(.horizontal, 30)
+							.padding(.top, 30)
+							.padding(.bottom, 20)
+						ForEach(missions.filter{$0.date.lowercased().contains("tbd")}) { mission in
+							MissionRow(mission: mission)
+						}
 					}
+
 				}
 				.navigationBarTitle(Text("Launches"), displayMode: .large)
 			}
@@ -32,7 +58,6 @@ struct ContentView: View {
 //		.accentColor(Color.black)
         .onAppear {
             loadLaunchData(to: &missions)
-			
 			dateFormatter.setLocalizedDateFormatFromTemplate("MMM")
 			currentMonth = dateFormatter.string(from: date).lowercased()
 		}
