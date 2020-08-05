@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MissionRow: View {
     var mission: Mission
-	@State var favourited = false //Will be part of the Mission object, and compared to the stored favourite data
+	@State var favourited = false //Cannot be part of the Mission object, unless the object is @State. Will be a variable used to compare the Mission's info to the list of saved Missions' info
     var body: some View {
         NavigationLink(destination: MissionView(mission: mission)) {
             HStack {
