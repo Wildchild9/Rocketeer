@@ -20,6 +20,7 @@ struct ContentView: View {
 			}
             .navigationTitle("Launches")
         }
+		.accentColor(Color.black)
         .onAppear {
             loadLaunchData(to: &missions)
         }
