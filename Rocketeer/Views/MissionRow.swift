@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MissionRow: View {
     var mission: Mission
-	@State var favourited = false
+	@State var favourited = false //Will be part of the Mission object, and compared to the stored favourite data
     var body: some View {
         NavigationLink(destination: MissionView(mission: mission)) {
             HStack {
