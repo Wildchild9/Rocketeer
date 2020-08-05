@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationView {
             List(missions) { mission in
                 MissionRow(mission: mission)
-            }
+			}
             .navigationTitle("Launches")
         }
         .onAppear {
