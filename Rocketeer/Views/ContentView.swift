@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
 			ZStack {
-				LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing)
+				LinearGradient(gradient: Gradient(colors: [Color("bg-grad-start"), Color("bg-grad-end")]), startPoint: .leading, endPoint: .trailing)
 					.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
 				ScrollView{
 					ForEach(missions) { mission in
@@ -24,7 +24,7 @@ struct ContentView: View {
 				.navigationTitle("Launches")
 			}
         }
-		.accentColor(Color.black)
+		.accentColor(Color.white)
         .onAppear {
             loadLaunchData(to: &missions)
 		}
