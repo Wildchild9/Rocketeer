@@ -34,6 +34,8 @@ struct MissionRow: View {
                 Spacer()
                 Text(mission.date)
             }
-		}.buttonStyle(PlainButtonStyle())
+		}
+		.buttonStyle(PlainButtonStyle())
+		.padding(.horizontal, 50)
     }
 }
