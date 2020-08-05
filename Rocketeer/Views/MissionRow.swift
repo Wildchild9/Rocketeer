@@ -31,5 +31,8 @@ struct MissionRow: View {
                 Text(mission.date)
             }
         }
+		.contextMenu(){
+			
+		}
     }
 }
