@@ -28,6 +28,7 @@ struct ContentView: View {
 							.padding(.horizontal, 30)
 							.padding(.top, 30)
 							.padding(.bottom, 20)
+							.foregroundColor(.white)
 						ForEach(missions.filter{$0.date.lowercased().contains(currentMonth)}) { mission in
 							MissionRow(mission: mission)
 						}
@@ -37,6 +38,7 @@ struct ContentView: View {
 							.padding(.horizontal, 30)
 							.padding(.top, 30)
 							.padding(.bottom, 20)
+							.foregroundColor(.white)
 						ForEach(missions.filter{!$0.date.lowercased().contains(currentMonth) && !$0.date.lowercased().contains("tbd")}) { mission in
 							MissionRow(mission: mission)
 						}
@@ -46,6 +48,7 @@ struct ContentView: View {
 							.padding(.horizontal, 30)
 							.padding(.top, 30)
 							.padding(.bottom, 20)
+							.foregroundColor(.white)
 						ForEach(missions.filter{$0.date.lowercased().contains("tbd")}) { mission in
 							MissionRow(mission: mission)
 						}
