@@ -13,9 +13,11 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List(missions) { mission in
-                MissionRow(mission: mission)
-            }
+            ScrollView{
+				ForEach(missions) { mission in
+					MissionRow(mission: mission)
+				}
+			}
             .navigationTitle("Launches")
         }
         .onAppear {
@@ -31,4 +33,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
