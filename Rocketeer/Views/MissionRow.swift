@@ -26,13 +26,15 @@ struct MissionRow: View {
 
                 VStack(alignment: .leading) {
                     Text(mission.rocket)
+						.bold()
+						.foregroundColor(Color.white)
                     
                     Text(mission.payload)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(Color("white-gray"))
                         .font(.subheadline)
                 }
                 Spacer()
-                Text(mission.date)
+                Text(mission.date).foregroundColor(Color("white-gray"))
             }
 		}
 		.buttonStyle(PlainButtonStyle())
