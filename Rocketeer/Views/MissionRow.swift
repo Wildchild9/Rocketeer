@@ -37,9 +37,13 @@ struct MissionRow: View {
         }
 		.contextMenu(){
 			HStack{
-				Text(favorited ? "Unfavorite" : "Favorite")
-				Spacer()
-				Image(systemName: favorited ? "star" : "star.fill")
+				Button(action: {
+				
+				}) {
+					Text(favorited ? "Unfavorite" : "Favorite")
+					Image(systemName: favorited ? "star" : "star.fill")
+					   }
+				
 			}
 		}
     }
