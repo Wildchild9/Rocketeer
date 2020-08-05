@@ -13,12 +13,16 @@ struct MissionRow: View {
     var body: some View {
         NavigationLink(destination: MissionView(mission: mission)) {
             HStack {
-                mission.logo
+				ZStack {
+					RoundedRectangle(cornerRadius: 5).fill(Color.white).frame(width: 45, height: 45)
+				mission.logo
                     .resizable()
                     .scaledToFit()
                     .frame(width: 45, height: 45)
                     .shadow(color: Color.black.opacity(0.3), radius: 2)
-                    .cornerRadius(5)
+					.clipShape(RoundedRectangle(cornerRadius: 5))
+				}
+					
 
                 VStack(alignment: .leading) {
                     Text(mission.rocket)
@@ -46,6 +50,7 @@ struct MissionRow: View {
 							
 						}
 					}
+			
 
         }
 		
