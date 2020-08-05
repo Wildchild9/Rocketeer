@@ -30,22 +30,24 @@ struct MissionRow: View {
                 Spacer()
                 Text(mission.date)
             }
+			.contextMenu(){
+						HStack{
+							Button(action: {
+								favourited.toggle()
+							}) {
+								Text(favourited ? "Unfavourite" : "Favourite")
+								Image(systemName: favourited ? "star" : "star.fill")
+								   }
+							NavigationLink(destination: MissionView(mission: mission)
+										   , label: {
+											Text("More Info")
+											Image(systemName: "info.circle")
+								   })
+							
+						}
+					}
+
         }
-		.contextMenu(){
-			HStack{
-				Button(action: {
-					favourited.toggle()
-				}) {
-					Text(favourited ? "Unfavourite" : "Favourite")
-					Image(systemName: favourited ? "star" : "star.fill")
-					   }
-				NavigationLink(destination: MissionView(mission: mission)
-							   , label: {
-								Text("More Info")
-								Image(systemName: "info.circle")
-					   })
-				
-			}
-		}
+		
     }
 }
