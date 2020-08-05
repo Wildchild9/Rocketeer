@@ -13,17 +13,21 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView{
-				ForEach(missions) { mission in
-					MissionRow(mission: mission)
+			ZStack {
+				LinearGradient(gradient: Gradient(colors: [Color.red, Color.blue]), startPoint: .leading, endPoint: .trailing)
+					.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+				ScrollView{
+					ForEach(missions) { mission in
+						MissionRow(mission: mission)
+					}
 				}
+				.navigationTitle("Launches")
 			}
-            .navigationTitle("Launches")
         }
 		.accentColor(Color.black)
         .onAppear {
             loadLaunchData(to: &missions)
-        }
+		}
     }
     
     
