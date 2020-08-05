@@ -37,5 +37,6 @@ struct MissionRow: View {
 		}
 		.buttonStyle(PlainButtonStyle())
 		.padding(.horizontal, 50)
+		.padding(.vertical, 20)
     }
 }
