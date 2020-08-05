@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MissionView: View {
     var mission: Mission
-    
+	@State var favourited = false //Cannot be part of the Mission object, unless the object is @State. Will be a variable used to compare the Mission's info to the list of saved Missions' info
     var body: some View {
 		ScrollView(.vertical, showsIndicators: false) {
 			VStack(alignment: .leading, spacing: 15) {
@@ -25,9 +25,9 @@ struct MissionView: View {
         .padding(20)
         .navigationTitle(mission.rocket)
 		.navigationBarItems(trailing:
-			Button(action: {print("star")}, label: {
-				Image(systemName: "star.fill")
-			})
+								Button(action: {favourited.toggle()}, label: {
+										Image(systemName: favourited ? "star" : "star.fill")
+								})
 			)
     }
 }
