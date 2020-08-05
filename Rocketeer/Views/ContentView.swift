@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+	let dateFormatter = DateFormatter()
+	let date = NSDate() as Date
+	@State var currentMonth = ""
+	
     @State var missions: [Mission] = []
     
     var body: some View {
@@ -28,6 +32,9 @@ struct ContentView: View {
 //		.accentColor(Color.black)
         .onAppear {
             loadLaunchData(to: &missions)
+			
+			dateFormatter.setLocalizedDateFormatFromTemplate("MMM")
+			currentMonth = dateFormatter.string(from: date).lowercased()
 		}
     }
 	init(){

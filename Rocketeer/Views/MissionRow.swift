@@ -52,7 +52,7 @@ struct MissionRow: View {
 				Spacer(minLength: self.space)
 				
 			}
-			Spacer(minLength: self.space)
+			Spacer(minLength: 20)
 		}
 	
     }
