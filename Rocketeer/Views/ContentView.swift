@@ -15,21 +15,25 @@ struct ContentView: View {
         NavigationView {
 			ZStack {
 				LinearGradient(gradient: Gradient(colors: [Color("bg-grad-start"), Color("bg-grad-end")]), startPoint: .leading, endPoint: .trailing)
-					.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+					.edgesIgnoringSafeArea(.all)
 				ScrollView{
-					ForEach(missions) { mission in
+					Spacer(minLength:30)
+					ForEach(missions.filter{$0.date.lowercased().contains("aug")}) { mission in
 						MissionRow(mission: mission)
 					}
 				}
-				.navigationTitle("Launches")
+				.navigationBarTitle(Text("Launches"), displayMode: .large)
 			}
         }
-		.accentColor(Color.black)
+//		.accentColor(Color.black)
         .onAppear {
             loadLaunchData(to: &missions)
 		}
     }
-    
+	init(){
+		UINavigationBar.appearance().largeTitleTextAttributes = [
+			.foregroundColor: UIColor.white]
+	}
     
 }
 
