@@ -23,7 +23,7 @@ struct MediumMissionWidget: View {
                 endPoint: .bottom
             )
             
-            VStack(spacing: 15) {
+            VStack(spacing: 17.5) {
                 MissionWidgetRow(mission: missions[0])
                 Divider()
                 MissionWidgetRow(mission: missions[1])
