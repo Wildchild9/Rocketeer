@@ -28,6 +28,7 @@
 		C2A6A99524DBA99E001013AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2A6A99424DBA99E001013AD /* Assets.xcassets */; };
 		C2A6A99924DBAB0E001013AD /* MediumMissionWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6A99824DBAB0E001013AD /* MediumMissionWidget.swift */; };
 		C2A6A99B24DBB217001013AD /* MissionWidgetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6A99A24DBB217001013AD /* MissionWidgetRow.swift */; };
+		C2A6A99D24DBB3B1001013AD /* LargeMissionWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A6A99C24DBB3B1001013AD /* LargeMissionWidget.swift */; };
 		C2B94F0024D9F444009829EB /* loadLaunchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B94EFF24D9F444009829EB /* loadLaunchData.swift */; };
 		C2B94F0924DA06D4009829EB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B94F0824DA06D4009829EB /* WidgetKit.framework */; };
 		C2B94F0B24DA06D4009829EB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B94F0A24DA06D4009829EB /* SwiftUI.framework */; };
@@ -111,6 +112,7 @@
 		C2A6A99424DBA99E001013AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2A6A99824DBAB0E001013AD /* MediumMissionWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumMissionWidget.swift; sourceTree = "<group>"; };
 		C2A6A99A24DBB217001013AD /* MissionWidgetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionWidgetRow.swift; sourceTree = "<group>"; };
+		C2A6A99C24DBB3B1001013AD /* LargeMissionWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeMissionWidget.swift; sourceTree = "<group>"; };
 		C2B94EFF24D9F444009829EB /* loadLaunchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadLaunchData.swift; sourceTree = "<group>"; };
 		C2B94F0124DA054D009829EB /* Rocketeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rocketeer.entitlements; sourceTree = "<group>"; };
 		C2B94F0624DA06D4009829EB /* RocketeerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RocketeerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +238,7 @@
 			children = (
 				C250BE0924DB935C00EC316A /* SmallMissionWidget.swift */,
 				C2A6A99824DBAB0E001013AD /* MediumMissionWidget.swift */,
+				C2A6A99C24DBB3B1001013AD /* LargeMissionWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				C250BE0F24DB95D400EC316A /* MissionProvider.swift in Sources */,
 				C200D8B224DBA5A5003CBC0F /* WidgetEntryView.swift in Sources */,
 				C2B94F2024DA0B10009829EB /* StringProtocol+firstMatch.swift in Sources */,
+				C2A6A99D24DBB3B1001013AD /* LargeMissionWidget.swift in Sources */,
 				C2B94F1D24DA079C009829EB /* Mission.swift in Sources */,
 				C2B94F0E24DA06D4009829EB /* RocketeerWidget.swift in Sources */,
 				C2B94F2224DA0B62009829EB /* String+doesMatch.swift in Sources */,

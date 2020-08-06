@@ -19,8 +19,10 @@ struct WidgetEntryView: View {
             SmallMissionWidget(mission: entry.missions[0])
         case .systemMedium:
             MediumMissionWidget(missions: entry.missions)
-        default:
-            EmptyView()
+        case .systemLarge:
+            LargeMissionWidget(missions: entry.missions)
+        @unknown default:
+            SmallMissionWidget(mission: entry.missions[0])
         }
     }
 }
