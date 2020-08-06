@@ -16,9 +16,6 @@ struct MissionRow: View {
 				Spacer(minLength: self.space)
 				
 				NavigationLink(destination: MissionView(mission: mission)) {
-					VStack(alignment: .leading) {
-						Text(mission.date).foregroundColor(Color("white-gray"))
-							.font(.subheadline)
 						HStack(alignment: .top) {
 							mission.logo
 								.resizable()
@@ -32,16 +29,19 @@ struct MissionRow: View {
 								)
 
 							VStack(alignment: .leading) {
+								HStack {
 									Text(mission.rocket)
-										.bold()
+											.bold()
 										.foregroundColor(Color("bg-card-text"))
+									Text(mission.date).foregroundColor(Color("white-gray"))
+										.font(.subheadline)
+								}
 								
 								Text(mission.payload)
 									.foregroundColor(Color("white-gray"))
 									.font(.subheadline)
 							}
 						}
-					}
 					Spacer(minLength: self.space)
 				}
 				.buttonStyle(PlainButtonStyle())

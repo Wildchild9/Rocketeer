@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
 			ZStack {
-				LinearGradient(gradient: Gradient(colors: [Color("bg-grad-start"), Color("bg-grad-end")]), startPoint: .leading, endPoint: .trailing)
+				LinearGradient(gradient: Gradient(colors: [Color("fancy-start"), Color("fancy-end")]), startPoint: .top, endPoint: .bottom)
 					.edgesIgnoringSafeArea(.all)
 				ScrollView{
 					VStack(alignment:.leading) {
@@ -74,6 +74,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+		ContentView()
+			.previewDevice("iPhone 11")
     }
 }
