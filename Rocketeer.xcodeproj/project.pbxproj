@@ -13,6 +13,7 @@
 		C208648C24D9C6EF00B22682 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208648B24D9C6EF00B22682 /* Preview Assets.xcassets */; };
 		C208649724D9C6F000B22682 /* RocketeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208649624D9C6F000B22682 /* RocketeerTests.swift */; };
 		C20864A224D9C6F000B22682 /* RocketeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20864A124D9C6F000B22682 /* RocketeerUITests.swift */; };
+		C250BE0324DB90F200EC316A /* MissionEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C250BE0224DB90F200EC316A /* MissionEntry.swift */; };
 		C25106A824D9CA9D00256231 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106A724D9CA9C00256231 /* Mission.swift */; };
 		C25106AB24D9CBCE00256231 /* String+matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AA24D9CBCE00256231 /* String+matches.swift */; };
 		C25106AD24D9CF3500256231 /* MissionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AC24D9CF3500256231 /* MissionRow.swift */; };
@@ -31,6 +32,11 @@
 		C2B94F1724DA06D6009829EB /* RocketeerWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C2B94F0624DA06D4009829EB /* RocketeerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2B94F1C24DA0798009829EB /* loadLaunchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B94EFF24D9F444009829EB /* loadLaunchData.swift */; };
 		C2B94F1D24DA079C009829EB /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106A724D9CA9C00256231 /* Mission.swift */; };
+		C2B94F1F24DA07FE009829EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208648824D9C6EF00B22682 /* Assets.xcassets */; };
+		C2B94F2024DA0B10009829EB /* StringProtocol+firstMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260C7CA24D9E083003F68AE /* StringProtocol+firstMatch.swift */; };
+		C2B94F2124DA0B20009829EB /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = C260C7C824D9DE46003F68AE /* Regex.swift */; };
+		C2B94F2224DA0B62009829EB /* String+doesMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */; };
+		C2B94F2324DA0B6F009829EB /* String+removeHtmlSpecialCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106B424D9D23700256231 /* String+removeHtmlSpecialCharacters.swift */; };
 		C2EB116C24D9D80400F28C5C /* String+doesMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EB116B24D9D80400F28C5C /* String+doesMatch.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +91,7 @@
 		C208649D24D9C6F000B22682 /* RocketeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RocketeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20864A124D9C6F000B22682 /* RocketeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketeerUITests.swift; sourceTree = "<group>"; };
 		C20864A324D9C6F000B22682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C250BE0224DB90F200EC316A /* MissionEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEntry.swift; sourceTree = "<group>"; };
 		C25106A724D9CA9C00256231 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		C25106AA24D9CBCE00256231 /* String+matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+matches.swift"; sourceTree = "<group>"; };
 		C25106AC24D9CF3500256231 /* MissionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRow.swift; sourceTree = "<group>"; };
@@ -257,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				C2B94F0D24DA06D4009829EB /* RocketeerWidget.swift */,
+				C250BE0224DB90F200EC316A /* MissionEntry.swift */,
 				C2B94F0F24DA06D4009829EB /* RocketeerWidget.intentdefinition */,
 				C2B94F1024DA06D6009829EB /* Assets.xcassets */,
 				C2B94F1224DA06D6009829EB /* Info.plist */,
@@ -422,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B94F1F24DA07FE009829EB /* Assets.xcassets in Resources */,
 				C2B94F1124DA06D6009829EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +447,7 @@
 				C25106B524D9D23700256231 /* String+removeHtmlSpecialCharacters.swift in Sources */,
 				C2EB116C24D9D80400F28C5C /* String+doesMatch.swift in Sources */,
 				C2B94F0024D9F444009829EB /* loadLaunchData.swift in Sources */,
+				C250BE0324DB90F200EC316A /* MissionEntry.swift in Sources */,
 				C25106AD24D9CF3500256231 /* MissionRow.swift in Sources */,
 				C25106A824D9CA9D00256231 /* Mission.swift in Sources */,
 				C2B94F1424DA06D6009829EB /* RocketeerWidget.intentdefinition in Sources */,
@@ -470,9 +480,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B94F1324DA06D6009829EB /* RocketeerWidget.intentdefinition in Sources */,
+				C2B94F2324DA0B6F009829EB /* String+removeHtmlSpecialCharacters.swift in Sources */,
 				C2B94F1C24DA0798009829EB /* loadLaunchData.swift in Sources */,
+				C2B94F2024DA0B10009829EB /* StringProtocol+firstMatch.swift in Sources */,
 				C2B94F1D24DA079C009829EB /* Mission.swift in Sources */,
 				C2B94F0E24DA06D4009829EB /* RocketeerWidget.swift in Sources */,
+				C2B94F2224DA0B62009829EB /* String+doesMatch.swift in Sources */,
+				C2B94F2124DA0B20009829EB /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
