@@ -16,6 +16,6 @@ struct RocketeerWidget: Widget {
         StaticConfiguration(kind: kind, provider: MissionProvider()) { entry in
             WidgetEntryView(entry: entry)
         }
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

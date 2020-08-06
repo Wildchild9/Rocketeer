@@ -17,6 +17,8 @@ struct WidgetEntryView: View {
         switch family {
         case .systemSmall:
             SmallMissionWidget(mission: entry.missions[0])
+        case .systemMedium:
+            MediumMissionWidget(missions: entry.missions)
         default:
             EmptyView()
         }
