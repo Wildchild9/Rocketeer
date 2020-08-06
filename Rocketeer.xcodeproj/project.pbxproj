@@ -265,6 +265,16 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
+		C2A6A99724DBAA99001013AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2A6A99424DBA99E001013AD /* Assets.xcassets */,
+				C2B94F0F24DA06D4009829EB /* RocketeerWidget.intentdefinition */,
+				C2B94F1224DA06D6009829EB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		C2B94F0724DA06D4009829EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,9 +292,7 @@
 				C250BE0624DB922A00EC316A /* MissionProvider.swift */,
 				C200D8B024DBA568003CBC0F /* WidgetEntryView.swift */,
 				C250BE0824DB934200EC316A /* Widgets */,
-				C2A6A99424DBA99E001013AD /* Assets.xcassets */,
-				C2B94F0F24DA06D4009829EB /* RocketeerWidget.intentdefinition */,
-				C2B94F1224DA06D6009829EB /* Info.plist */,
+				C2A6A99724DBAA99001013AD /* Resources */,
 			);
 			path = RocketeerWidget;
 			sourceTree = "<group>";
@@ -787,7 +795,7 @@
 				CODE_SIGN_ENTITLEMENTS = RocketeerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLAVQ37GJV;
-				INFOPLIST_FILE = RocketeerWidget/Info.plist;
+				INFOPLIST_FILE = RocketeerWidget/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -809,7 +817,7 @@
 				CODE_SIGN_ENTITLEMENTS = RocketeerWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLAVQ37GJV;
-				INFOPLIST_FILE = RocketeerWidget/Info.plist;
+				INFOPLIST_FILE = RocketeerWidget/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
