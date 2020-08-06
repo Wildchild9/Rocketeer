@@ -16,6 +16,8 @@ struct RocketeerWidget: Widget {
         StaticConfiguration(kind: kind, provider: MissionProvider()) { entry in
             WidgetEntryView(entry: entry)
         }
+        .configurationDisplayName("Upcoming Launches")
+        .description("Get quick access to information about upcoming launches.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
