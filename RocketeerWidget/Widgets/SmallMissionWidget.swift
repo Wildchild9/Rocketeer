@@ -25,6 +25,7 @@ struct SmallMissionWidget: View{
                         .resizable()
                         .scaledToFit()
                         .padding(5)
+                        .frame(width: 50, height: 50)
                         .background(
                             ContainerRelativeShape()
                                 .fill(Color.white)

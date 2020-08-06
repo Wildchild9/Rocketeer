@@ -16,6 +16,7 @@ struct MissionWidgetRow: View {
                 .resizable()
                 .scaledToFit()
                 .padding(5)
+                .frame(width: 50, height: 50)
                 .background(
                     ContainerRelativeShape()
                         .fill(Color.white)
@@ -28,7 +29,8 @@ struct MissionWidgetRow: View {
                         .font(.title2)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                        .minimumScaleFactor(0.01)
+                        .minimumScaleFactor(0.5)
+                        .fixedSize()
                     
                     Spacer(minLength: 5)
                     
@@ -52,7 +54,8 @@ struct MissionWidgetRow: View {
                 
                 Text(mission.payload)
                     .foregroundColor(.white)
-                    .minimumScaleFactor(0.01)
+                    .minimumScaleFactor(0.5)
+                    .fixedSize()
             }
         }
     }
@@ -60,6 +63,6 @@ struct MissionWidgetRow: View {
 
 struct MissionWidgetRow_Previews: PreviewProvider {
     static var previews: some View {
-        MissionWidgetRow(mission: MissionProvider.placeholderMission)
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

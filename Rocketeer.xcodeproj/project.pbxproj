@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C36CAFC24DC5093007264BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648624D9C6EC00B22682 /* ContentView.swift */; };
-		0C36CAFD24DC50CA007264BE /* MissionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AC24D9CF3500256231 /* MissionRow.swift */; };
-		0C36CAFE24DC50D5007264BE /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106B224D9CFEF00256231 /* MissionView.swift */; };
-		0C36CAFF24DC50E6007264BE /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106B024D9CF9700256231 /* Field.swift */; };
 		C200D8B224DBA5A5003CBC0F /* WidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200D8B024DBA568003CBC0F /* WidgetEntryView.swift */; };
 		C208648524D9C6EC00B22682 /* RocketeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648424D9C6EC00B22682 /* RocketeerApp.swift */; };
 		C208648724D9C6EC00B22682 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648624D9C6EC00B22682 /* ContentView.swift */; };
@@ -518,15 +514,11 @@
 			files = (
 				C2B94F1324DA06D6009829EB /* RocketeerWidget.intentdefinition in Sources */,
 				C2A6A99924DBAB0E001013AD /* MediumMissionWidget.swift in Sources */,
-				0C36CAFD24DC50CA007264BE /* MissionRow.swift in Sources */,
-				0C36CAFC24DC5093007264BE /* ContentView.swift in Sources */,
 				C2B94F2324DA0B6F009829EB /* String+removeHtmlSpecialCharacters.swift in Sources */,
-				0C36CAFE24DC50D5007264BE /* MissionView.swift in Sources */,
 				C2A6A99B24DBB217001013AD /* MissionWidgetRow.swift in Sources */,
 				C250BE0A24DB935C00EC316A /* SmallMissionWidget.swift in Sources */,
 				C250BE1024DB95D700EC316A /* MissionEntry.swift in Sources */,
 				C2B94F1C24DA0798009829EB /* loadLaunchData.swift in Sources */,
-				0C36CAFF24DC50E6007264BE /* Field.swift in Sources */,
 				C250BE0F24DB95D400EC316A /* MissionProvider.swift in Sources */,
 				C200D8B224DBA5A5003CBC0F /* WidgetEntryView.swift in Sources */,
 				C2B94F2024DA0B10009829EB /* StringProtocol+firstMatch.swift in Sources */,
