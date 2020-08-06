@@ -14,6 +14,7 @@
 		C208649724D9C6F000B22682 /* RocketeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208649624D9C6F000B22682 /* RocketeerTests.swift */; };
 		C20864A224D9C6F000B22682 /* RocketeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20864A124D9C6F000B22682 /* RocketeerUITests.swift */; };
 		C250BE0324DB90F200EC316A /* MissionEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C250BE0224DB90F200EC316A /* MissionEntry.swift */; };
+		C250BE0724DB922A00EC316A /* MissionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C250BE0624DB922A00EC316A /* MissionProvider.swift */; };
 		C25106A824D9CA9D00256231 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106A724D9CA9C00256231 /* Mission.swift */; };
 		C25106AB24D9CBCE00256231 /* String+matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AA24D9CBCE00256231 /* String+matches.swift */; };
 		C25106AD24D9CF3500256231 /* MissionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AC24D9CF3500256231 /* MissionRow.swift */; };
@@ -92,6 +93,7 @@
 		C20864A124D9C6F000B22682 /* RocketeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketeerUITests.swift; sourceTree = "<group>"; };
 		C20864A324D9C6F000B22682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C250BE0224DB90F200EC316A /* MissionEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEntry.swift; sourceTree = "<group>"; };
+		C250BE0624DB922A00EC316A /* MissionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionProvider.swift; sourceTree = "<group>"; };
 		C25106A724D9CA9C00256231 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		C25106AA24D9CBCE00256231 /* String+matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+matches.swift"; sourceTree = "<group>"; };
 		C25106AC24D9CF3500256231 /* MissionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRow.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				C2B94F0D24DA06D4009829EB /* RocketeerWidget.swift */,
 				C250BE0224DB90F200EC316A /* MissionEntry.swift */,
+				C250BE0624DB922A00EC316A /* MissionProvider.swift */,
 				C2B94F0F24DA06D4009829EB /* RocketeerWidget.intentdefinition */,
 				C2B94F1024DA06D6009829EB /* Assets.xcassets */,
 				C2B94F1224DA06D6009829EB /* Info.plist */,
@@ -444,6 +447,7 @@
 			files = (
 				C25106B324D9CFEF00256231 /* MissionView.swift in Sources */,
 				C260C7C924D9DE46003F68AE /* Regex.swift in Sources */,
+				C250BE0724DB922A00EC316A /* MissionProvider.swift in Sources */,
 				C25106B524D9D23700256231 /* String+removeHtmlSpecialCharacters.swift in Sources */,
 				C2EB116C24D9D80400F28C5C /* String+doesMatch.swift in Sources */,
 				C2B94F0024D9F444009829EB /* loadLaunchData.swift in Sources */,
