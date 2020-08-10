@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C20BE7424E0B2DB00A68364 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C20BE7324E0B2DB00A68364 /* FilterButton.swift */; };
 		C208648524D9C6EC00B22682 /* RocketeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648424D9C6EC00B22682 /* RocketeerApp.swift */; };
 		C208648724D9C6EC00B22682 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648624D9C6EC00B22682 /* ContentView.swift */; };
 		C208648924D9C6EF00B22682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208648824D9C6EF00B22682 /* Assets.xcassets */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C20BE7324E0B2DB00A68364 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		0C3092A824E07359007BC03C /* SanFranciscoText-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Light.otf"; sourceTree = "<group>"; };
 		C208648124D9C6EC00B22682 /* Rocketeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocketeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C208648424D9C6EC00B22682 /* RocketeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketeerApp.swift; sourceTree = "<group>"; };
 		C208648624D9C6EC00B22682 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		C208648324D9C6EC00B22682 /* Rocketeer */ = {
 			isa = PBXGroup;
 			children = (
+				0C3092A824E07359007BC03C /* SanFranciscoText-Light.otf */,
 				C208648424D9C6EC00B22682 /* RocketeerApp.swift */,
 				C25106B624D9D2CF00256231 /* Views */,
 				C2EB116A24D9D36300F28C5C /* Model */,
@@ -196,6 +200,7 @@
 			children = (
 				C25106A724D9CA9C00256231 /* Mission.swift */,
 				C2B94EFF24D9F444009829EB /* loadLaunchData.swift */,
+				0C20BE7324E0B2DB00A68364 /* FilterButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				C25106AB24D9CBCE00256231 /* String+matches.swift in Sources */,
 				C260C7CB24D9E083003F68AE /* StringProtocol+firstMatch.swift in Sources */,
 				C25106B124D9CF9700256231 /* Field.swift in Sources */,
+				0C20BE7424E0B2DB00A68364 /* FilterButton.swift in Sources */,
 				C208648524D9C6EC00B22682 /* RocketeerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,15 +36,14 @@ func loadLaunchData(to missions: inout [Mission], limitedBy maxNumberOfMissions:
         let launchSite = String(match[match.range(of:  #"(?<=Launch site:</span> ).+?(?=</div>)"#, options: .regularExpression)!]).removeHtmlSpecialCharacters()
         // Removing the updates
         let missionDescription = String(match[match.range(of:  #"(?<=<div class="missdescrip">).+?(?=(\[<span|</div>|</p>))"#, options: .regularExpression)!]).removeHtmlSpecialCharacters()
-        
-        
         let mission = Mission(date: date,
                               rocket: rocket,
                               payload: payload,
                               launchTime: launchTime,
                               launchSite: launchSite,
-                              description: missionDescription)
-        
+                              description: missionDescription,
+							  org: orgNameFromRocket(rocket: rocket.lowercased()))
+
         missions.append(mission)
         
         if let n = maxNumberOfMissions, i == n {
