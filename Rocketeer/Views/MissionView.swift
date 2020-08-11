@@ -67,7 +67,6 @@ struct MissionView: View {
 				Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal)', for \(st)"))
 			}}
 				}
-//				Text(mission.exactTime)
                 Field(title: "Launch Time", contents: mission.launchTime)
                 Field(title: "Launch Site", contents: mission.launchSite)
                 Field(title: "Payload", contents: mission.payload)
@@ -104,15 +103,7 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 		r = Date()
 	}
 	
-	var start = r
-	
-	if(mission.exactTime.contains("a.m.")){
-		let t = Double(mission.exactTime.split(separator: ":")[0]) ?? 0
-		start = start.addingTimeInterval(t * 60 * 60)
-	} else if(mission.exactTime.contains("p.m.")){
-		let t = Double(mission.exactTime.split(separator: ":")[0]) ?? 0
-		start = start.addingTimeInterval((t + 12) * 60 * 60 )
-	}
+	let start = r
 	
 	let end = start.addingTimeInterval(2 * 60 * 60)
 	
@@ -134,7 +125,7 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 struct MissionView_Previews: PreviewProvider {
 	static var previews: some View {
 		NavigationView
-		{MissionView(mission: Mission(date: "Aug 11", rocket: "Falcon 9", payload: "Starlink 11", launchTime: "0512 GMT (1:12 a.m. EDT)", launchSite: "Florida or something", description: "sdkl;alfsdajfklafs;afsfjkj"))}
+		{MissionView(mission: Mission(date: "Aug 11", rocket: "Falcon 9", payload: "Starlink 11", launchTime: "4 pm", launchSite: "Florida or something", description: "sdkl;alfsdajfklafs;afsfjkj"))}
 		.colorScheme(.dark)
 	}
 }
