@@ -18,44 +18,54 @@ struct MissionView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 15) {
-				Button(action: {
-					switch EKEventStore.authorizationStatus(for: .event) {
-			  case .authorized:
-				let e = insertEvent(mission: mission, store: eventStore)
-				cal = e[0]
-				st = e[1]
-				showAlert = true
-				  case .denied:
-					  print(false)
-				  case .notDetermined:
-				  // 3
-					  eventStore.requestAccess(to: .event, completion:
-												  {_,_ in
-													  switch EKEventStore.authorizationStatus(for: .event) {
-													  case .authorized:
-														let e = insertEvent(mission: mission, store: eventStore)
-														cal = e[0]
-														st = e[1]
-														showAlert = true
-													  case .denied:
-														  print(true)
-													  case .notDetermined:
-														  print(true)
-													  case .restricted:
-														  print(true)
-													  default:
-														  print(true)
-													  }
-					  })
-					  default:
-						  print("Case default")
-			  }
-		  }, label: {
-					Image(systemName: "calendar.badge.plus")
-		}).alert(isPresented: $showAlert){
-			Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal)', for \(st)"))
-		}
-                Field(title: "Date", contents: mission.date)
+				HStack {
+					Field(title: "Date", contents: mission.date)
+					Button(action: {
+						switch EKEventStore.authorizationStatus(for: .event) {
+				  case .authorized:
+					let e = insertEvent(mission: mission, store: eventStore)
+					cal = e[0]
+					st = e[1]
+					showAlert = true
+					  case .denied:
+						  print(false)
+					  case .notDetermined:
+					  // 3
+						  eventStore.requestAccess(to: .event, completion:
+													  {_,_ in
+														  switch EKEventStore.authorizationStatus(for: .event) {
+														  case .authorized:
+															let e = insertEvent(mission: mission, store: eventStore)
+															cal = e[0]
+															st = e[1]
+															showAlert = true
+														  case .denied:
+															  print(true)
+														  case .notDetermined:
+															  print(true)
+														  case .restricted:
+															  print(true)
+														  default:
+															  print(true)
+														  }
+						  })
+						  default:
+							  print("Case default")
+				  }
+			  }, label: {
+//				Label("Add to Calendar", systemImage: "calendar.badge.plus")
+				Image(systemName:"calendar.badge.plus")
+					.padding(6)
+					.foregroundColor(.white)
+			})
+					.background(
+						RoundedRectangle(cornerRadius: 4)
+							.fill(Color.blue)
+					)
+					.alert(isPresented: $showAlert){
+				Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal)', for \(st)"))
+			}
+				}
                 Field(title: "Launch Time", contents: mission.launchTime)
                 Field(title: "Launch Site", contents: mission.launchSite)
                 Field(title: "Payload", contents: mission.payload)
@@ -105,4 +115,12 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 	}
 	return [calendar.title, df.string(from: start)]
 	
+}
+
+struct MissionView_Previews: PreviewProvider {
+	static var previews: some View {
+		NavigationView
+		{MissionView(mission: Mission(date: "Aug 11", rocket: "Falcon 9", payload: "Starlink 11", launchTime: "4 pm", launchSite: "Florida or something", description: "sdkl;alfsdajfklafs;afsfjkj"))}
+		.colorScheme(.dark)
+	}
 }
