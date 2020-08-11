@@ -127,6 +127,7 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 	} catch {
 		
 	}
+	df.dateFormat = "eee MMM dd hh:mm yyyy"
 	return [calendar.title, df.string(from: start)]
 	
 }
