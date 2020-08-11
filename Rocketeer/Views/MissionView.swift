@@ -20,7 +20,8 @@ struct MissionView: View {
             VStack(alignment: .leading, spacing: 15) {
 				HStack {
 					Field(title: "Date", contents: mission.date)
-					Button(action: {
+					if mission.date != "TBD" && !mission.date.lowercased().contains("quarter")
+					{Button(action: {
 						switch EKEventStore.authorizationStatus(for: .event) {
 				  case .authorized:
 					let e = insertEvent(mission: mission, store: eventStore)
@@ -64,7 +65,7 @@ struct MissionView: View {
 					)
 					.alert(isPresented: $showAlert){
 				Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal)', for \(st)"))
-			}
+			}}
 				}
                 Field(title: "Launch Time", contents: mission.launchTime)
                 Field(title: "Launch Site", contents: mission.launchSite)
@@ -93,7 +94,11 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 	let url = URL(string: "https://allpurpose.netlify.app/.netlify/functions/dateParse?a=\(md)")
 	do {
 		d = try String(contentsOf: url!)
+		if(d != "TBD"){
+				return ["TBD"]
+		} else {
 		r = df.date(from: d)!
+		}
 	} catch {
 		r = Date()
 	}
