@@ -79,7 +79,8 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 	var r: Date
 	let df = DateFormatter()
 	df.dateFormat = "eee MMM dd yyyy"
-	let url = URL(string: "https://allpurpose.netlify.app/.netlify/functions/dateParse?a=aug+8+2020")
+	let md = mission.date.split(separator: " ").joined(separator: "+")
+	let url = URL(string: "https://allpurpose.netlify.app/.netlify/functions/dateParse?a=\(md)")
 	do {
 		d = try String(contentsOf: url!)
 		r = df.date(from: d)!
