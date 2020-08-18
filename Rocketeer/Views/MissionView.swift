@@ -26,7 +26,7 @@ struct MissionView: View {
         .navigationTitle(mission.rocket)
 		.navigationBarItems(trailing:
 								Button(action: {favourited.toggle()}, label: {
-										Image(systemName: favourited ? "star" : "star.fill")
+										Image(systemName: favourited ? "star.fill" : "star")
 								})
 			)
     }

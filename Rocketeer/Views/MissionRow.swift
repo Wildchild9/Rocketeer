@@ -36,7 +36,7 @@ struct MissionRow: View {
 								favourited.toggle()
 							}) {
 								Text(favourited ? "Unfavourite" : "Favourite")
-								Image(systemName: favourited ? "star" : "star.fill")
+								Image(systemName: favourited ? "star.fill" : "star")
 								   }
 							NavigationLink(destination: MissionView(mission: mission)
 										   , label: {
