@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CD5507A24EC42DC00EFD462 /* insertEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5507824EC42CC00EFD462 /* insertEvent.swift */; };
 		C208648524D9C6EC00B22682 /* RocketeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648424D9C6EC00B22682 /* RocketeerApp.swift */; };
 		C208648724D9C6EC00B22682 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648624D9C6EC00B22682 /* ContentView.swift */; };
 		C208648924D9C6EF00B22682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208648824D9C6EF00B22682 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CD5507824EC42CC00EFD462 /* insertEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insertEvent.swift; sourceTree = "<group>"; };
 		C208648124D9C6EC00B22682 /* Rocketeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocketeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C208648424D9C6EC00B22682 /* RocketeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketeerApp.swift; sourceTree = "<group>"; };
 		C208648624D9C6EC00B22682 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				C25106A724D9CA9C00256231 /* Mission.swift */,
+				0CD5507824EC42CC00EFD462 /* insertEvent.swift */,
 				C2B94EFF24D9F444009829EB /* loadLaunchData.swift */,
 			);
 			path = Model;
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25106B324D9CFEF00256231 /* MissionView.swift in Sources */,
+				0CD5507A24EC42DC00EFD462 /* insertEvent.swift in Sources */,
 				C260C7C924D9DE46003F68AE /* Regex.swift in Sources */,
 				C25106B524D9D23700256231 /* String+removeHtmlSpecialCharacters.swift in Sources */,
 				C2EB116C24D9D80400F28C5C /* String+doesMatch.swift in Sources */,

@@ -94,7 +94,7 @@ struct MissionRow: View {
 				Image(systemName: "calendar.badge.plus")
 			})
 			}}).alert(isPresented: $showAlert){
-			Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal)', for \(st)"))
+			Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal)' calendar, for \(st)"))
 		   }
     }
 }
