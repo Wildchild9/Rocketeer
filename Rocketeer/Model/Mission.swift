@@ -38,7 +38,7 @@ struct Mission: Identifiable, Codable {
         case "electron|photon".asRegex:
             return Image("rocketlab-logo")
             
-        case "soyuz".asRegex:
+        case "soyuz|angara".asRegex:
             return Image("roscosmos-logo")
             
         case "falcon".asRegex:
