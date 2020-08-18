@@ -29,7 +29,24 @@ struct MissionView: View {
 					st = e[1]
 					showAlert = true
 					  case .denied:
-						  print(false)
+						eventStore.requestAccess(to: .event, completion:
+													{_,_ in
+														switch EKEventStore.authorizationStatus(for: .event) {
+														case .authorized:
+														  let e = insertEvent(mission: mission, store: eventStore)
+														  cal = e[0]
+														  st = e[1]
+														  showAlert = true
+														case .denied:
+															print(true)
+														case .notDetermined:
+															print(true)
+														case .restricted:
+															print(true)
+														default:
+															print(true)
+														}
+						})
 					  case .notDetermined:
 					  // 3
 						  eventStore.requestAccess(to: .event, completion:
@@ -94,7 +111,7 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 	let url = URL(string: "https://allpurpose.netlify.app/.netlify/functions/dateParse?a=\(md)")
 	do {
 		d = try String(contentsOf: url!)
-		if(d != "TBD"){
+		if d == "TBD" {
 				return ["TBD"]
 		} else {
 		r = df.date(from: d)!
@@ -103,7 +120,15 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 		r = Date()
 	}
 	
-	let start = r
+	var start = r
+	
+	if(mission.exactTime.contains("a.m.")){
+		let t = Double(mission.exactTime.split(separator: ":")[0]) ?? 0
+		start = start.addingTimeInterval(t == 12 ? 0 : t * 60 * 60)
+	} else if(mission.exactTime.contains("p.m.")){
+		let t = Double(mission.exactTime.split(separator: ":")[0]) ?? 0
+		start = start.addingTimeInterval(((t == 12 ? 0 : t) + 12) * 60 * 60 )
+	}
 	
 	let end = start.addingTimeInterval(2 * 60 * 60)
 	
@@ -118,6 +143,7 @@ func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
 	} catch {
 		
 	}
+	df.dateFormat = "eeee',' MMMM dd',' yyyy', at' hh:mm a"
 	return [calendar.title, df.string(from: start)]
 	
 }

@@ -29,10 +29,8 @@ func loadLaunchData(to missions: inout [Mission], limitedBy maxNumberOfMissions:
         let date = String(match.prefix { $0 != "<" }).removeHtmlSpecialCharacters()
         
         let name = String(match[match.range(of: #"(?<=class="mission">).+?(?=</span)"#, options: .regularExpression)!]).removeHtmlSpecialCharacters().components(separatedBy: " • ")
-        
         let rocket = name[0]
         let payload = name[1]
-        
         let launchTime = String(match[match.range(of:  #"(?<=Launch (window|time|period):</span> ).+?(?=<span)"#, options: .regularExpression)!]).removeHtmlSpecialCharacters().replacingOccurrences(of: #"(\d{2})(\d{2})"#, with: "$1:$2", options: .regularExpression)
         let launchSite = String(match[match.range(of:  #"(?<=Launch site:</span> ).+?(?=</div>)"#, options: .regularExpression)!]).removeHtmlSpecialCharacters()
         // Removing the updates
