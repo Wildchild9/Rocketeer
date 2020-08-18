@@ -94,6 +94,21 @@ struct MissionView: View {
         }
         .padding(20)
         .navigationTitle(mission.rocket)
+		.navigationBarItems(trailing:
+			Button(action: {
+				var o = UserDefaults.standard.stringArray(forKey: "favouriteLaunches") ?? []
+				if o.contains(mission.key) {
+					o = o.filter {$0 != mission.key}
+				} else {
+					o.append(mission.key)
+				}
+				UserDefaults.standard.setValue(o, forKey: "favouriteLaunches")
+				
+				
+			}, label: {
+				Image(systemName: checkStorage(key: mission.key) ? "star.fill" : "star")
+			})
+		)
 		
     }
 }

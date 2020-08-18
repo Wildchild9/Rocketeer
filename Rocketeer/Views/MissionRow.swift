@@ -30,7 +30,12 @@ struct MissionRow: View {
                     Text(mission.payload)
                         .foregroundColor(.secondary)
                         .font(.subheadline)
-                }
+				}
+				.padding(2)
+				.background(
+				RoundedRectangle(cornerRadius: 4)
+					.fill( checkStorage(key: mission.key) ? Color.blue.opacity(0.4) : Color.clear)
+				)
                 Spacer()
                 Text(mission.date)
             }
