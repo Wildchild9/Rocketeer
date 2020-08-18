@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct Mission: Identifiable, Codable {
 	var id:UUID = UUID()
@@ -15,7 +16,10 @@ struct Mission: Identifiable, Codable {
     var launchTime: String
     var launchSite: String
     var description: String
-    
+	var key: String {
+		let str = "\(rocket):\(payload)".data(using: .utf8)
+		return str!.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+	}
     var logo: Image {
         let name = rocket.lowercased()
         
