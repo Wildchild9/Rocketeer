@@ -10,8 +10,9 @@ import EventKit
 
 struct MissionRow: View {
     var mission: Mission
+    @Binding var favourites: [String]
     var body: some View {
-        NavigationLink(destination: MissionView(mission: mission)) {
+        NavigationLink(destination: MissionView(mission: mission, favourites: $favourites)) {
             HStack {
 				mission.logo
 					.resizable()
