@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Mission: Identifiable, Codable {
-    var id = UUID()
+	var id:UUID = UUID()
     var date: String
     var rocket: String
     var payload: String
