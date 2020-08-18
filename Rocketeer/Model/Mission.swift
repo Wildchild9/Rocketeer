@@ -19,7 +19,8 @@ struct Mission: Identifiable, Codable {
     var launchSite: String
     var description: String
 	var key: String {
-		return b64Encode(input: "\(rocket):\(payload)")
+//		return b64Encode(input: "\(rocket):\(payload)")
+		return "\(rocket):\(payload)"
 	}
     var logo: Image {
         let name = rocket.lowercased()
