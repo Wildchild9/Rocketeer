@@ -15,6 +15,8 @@ struct MissionView: View {
 	@State var showAlert = false
 	@State var cal = "c"
 	@State var st = "s"
+    @Binding var favourites: [String]
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 15) {
@@ -96,6 +98,7 @@ struct MissionView: View {
         .navigationTitle(mission.rocket)
 		.navigationBarItems(trailing:
 			Button(action: {
+                favourites.append(mission.key)
 				var o = UserDefaults.standard.stringArray(forKey: "favouriteLaunches") ?? []
 				if o.contains(mission.key) {
 					o = o.filter {$0 != mission.key}
@@ -115,9 +118,19 @@ struct MissionView: View {
 
 
 struct MissionView_Previews: PreviewProvider {
+    
 	static var previews: some View {
-		NavigationView
-		{MissionView(mission: Mission(date: "Aug 11", rocket: "Falcon 9", payload: "Starlink 11", launchTime: "4 pm", launchSite: "Florida or something", description: "sdkl;alfsdajfklafs;afsfjkj"))}
+		NavigationView {
+            MissionView(mission: Mission(date: "Aug 11",
+                                         rocket: "Falcon 9",
+                                         payload: "Starlink 11",
+                                         launchTime: "4 pm",
+                                         launchSite: "Florida or something",
+                                         description: "sdkl;alfsdajfklafs;afsfjkj"),
+                        favourites: .constant([])
+            )
+            
+        }
 		.colorScheme(.dark)
 	}
 }
