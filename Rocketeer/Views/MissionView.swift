@@ -81,7 +81,7 @@ struct MissionView: View {
 							.fill(Color.blue)
 					)
 					.alert(isPresented: $showAlert){
-				Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal)', for \(st)"))
+				Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal) calendar', for \(st)"))
 			}}
 				}
                 Field(title: "Launch Time", contents: mission.launchTime)
@@ -98,55 +98,6 @@ struct MissionView: View {
     }
 }
 
-func insertEvent(mission: Mission, store: EKEventStore) -> [String] {
-	
-	let calendars = store.calendars(for: .event)
-	let calendar = calendars[1]
-	
-	var d = ""
-	var r: Date
-	let df = DateFormatter()
-	df.dateFormat = "eee MMM dd yyyy"
-	let md = mission.date.split(separator: " ").joined(separator: "+")
-	let url = URL(string: "https://allpurpose.netlify.app/.netlify/functions/dateParse?a=\(md)")
-	do {
-		d = try String(contentsOf: url!)
-		if d == "TBD" {
-				return ["TBD"]
-		} else {
-		r = df.date(from: d)!
-		}
-	} catch {
-		r = Date()
-	}
-	
-	var start = r
-	
-	if(mission.exactTime.contains("a.m.")){
-		let t = Double(mission.exactTime.split(separator: ":")[0]) ?? 0
-		start = start.addingTimeInterval(t == 12 ? 0 : t * 60 * 60)
-	} else if(mission.exactTime.contains("p.m.")){
-		let t = Double(mission.exactTime.split(separator: ":")[0]) ?? 0
-		start = start.addingTimeInterval(((t == 12 ? 0 : t) + 12) * 60 * 60 )
-	}
-	
-	let end = start.addingTimeInterval(2 * 60 * 60)
-	
-	let event = EKEvent(eventStore: store)
-	event.calendar = calendar
-	event.title = mission.rocket + " Launch"
-	event.startDate = start
-	event.endDate = end
-	
-	do {
-		try store.save(event, span: .thisEvent)
-	} catch {
-		
-	}
-	df.dateFormat = "eeee',' MMMM dd',' yyyy', at' hh:mm a"
-	return [calendar.title, df.string(from: start)]
-	
-}
 
 struct MissionView_Previews: PreviewProvider {
 	static var previews: some View {
