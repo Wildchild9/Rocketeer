@@ -8,6 +8,8 @@
 import SwiftUI
 import Foundation
 
+var favouriteLaunches: [String] = UserDefaults.standard.stringArray(forKey: "favouriteLaunches") ?? []
+
 struct Mission: Identifiable, Codable {
 	var id:UUID = UUID()
     var date: String
