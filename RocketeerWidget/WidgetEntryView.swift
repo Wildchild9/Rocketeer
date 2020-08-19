@@ -16,13 +16,25 @@ struct WidgetEntryView: View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallMissionWidget(mission: entry.missions[0])
+            if entry.missions.isEmpty {
+                SmallMissionWidget.Placeholder()
+            } else {
+                SmallMissionWidget(mission: entry.missions[0])
+            }
         case .systemMedium:
-            MediumMissionWidget(missions: entry.missions)
+            if entry.missions.count < 2 {
+                MediumMissionWidget.Placeholder()
+            } else {
+                MediumMissionWidget(missions: entry.missions)
+            }
         case .systemLarge:
-            LargeMissionWidget(missions: entry.missions)
+            if entry.missions.count < 4 {
+                LargeMissionWidget.Placeholder()
+            } else {
+                LargeMissionWidget(missions: entry.missions)
+            }
         @unknown default:
-            SmallMissionWidget(mission: entry.missions[0])
+            SmallMissionWidget.Placeholder()
         }
     }
 }

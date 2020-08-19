@@ -8,6 +8,13 @@
 import SwiftUI
 import WidgetKit
 
+struct DividerAndSpacer: View {
+    var body: some View {
+        Spacer(minLength: 7.5)
+        Divider()
+        Spacer(minLength: 7.5)
+    }
+}
 struct LargeMissionWidget: View {
     var missions: [Mission]
     
@@ -23,14 +30,15 @@ struct LargeMissionWidget: View {
                 endPoint: .bottom
             )
             
-            VStack(spacing: 17.5) {
-                MissionWidgetRow(mission: missions[0])
-                Divider()
-                MissionWidgetRow(mission: missions[1])
-                Divider()
-                MissionWidgetRow(mission: missions[2])
-                Divider()
-                MissionWidgetRow(mission: missions[3])
+            VStack() {
+                ForEach(0...3, id: \.self) { i in
+                    MissionWidgetRow(mission: missions[i])
+                    if i < 3 {
+                        Spacer(minLength: 7.5)
+                        Divider()
+                        Spacer(minLength: 7.5)
+                    }
+                }
             }
             .padding(15)
         }
@@ -43,12 +51,70 @@ struct LargeMissionWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             LargeMissionWidget(missions: missions)
+                .previewDevice("iPhone 11")
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
                 .colorScheme(.light)
             
             LargeMissionWidget(missions: missions)
+                .previewDevice("iPhone 11")
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
                 .colorScheme(.dark)
+            
+            LargeMissionWidget(missions: missions)
+                .previewDevice("iPhone 8")
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+                .colorScheme(.light)
+            
+            LargeMissionWidget(missions: missions)
+                .previewDevice("iPhone 8")
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+                .colorScheme(.dark)
+            
+            LargeMissionWidget.Placeholder()
+                .previewDevice("iPhone 11")
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+                .colorScheme(.light)
+            
+            LargeMissionWidget.Placeholder()
+                .previewDevice("iPhone 11")
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+                .colorScheme(.dark)
+            
+            LargeMissionWidget.Placeholder()
+                .previewDevice("iPhone 8")
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+                .colorScheme(.light)
+            
+            LargeMissionWidget.Placeholder()
+                .previewDevice("iPhone 8")
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+                .colorScheme(.dark)
+        }
+    }
+}
+
+extension LargeMissionWidget {
+    struct Placeholder: View {
+        var body: some View {
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color("background-gradient-start"), Color("background-gradient-end")]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                
+                VStack() {
+                    ForEach(0...3, id: \.self) { i in
+                        MissionWidgetRow.Placeholder()
+                        if i < 3 {
+                            Spacer(minLength: 7.5)
+                            Divider()
+                            Spacer(minLength: 7.5)
+                        }
+                    }
+                }
+                .padding(15)
+            }
         }
     }
 }

@@ -11,26 +11,29 @@ struct MissionWidgetRow: View {
     var mission: Mission
     
     var body: some View {
-        HStack(spacing: 15) {
+        HStack(spacing: 12.5) {
             mission.logo
                 .resizable()
                 .scaledToFit()
                 .padding(5)
                 .frame(width: 50, height: 50)
                 .background(
-                    ContainerRelativeShape()
+                    Rectangle()
                         .fill(Color.white)
+                        .cornerRadius(7.5)
                         .shadow(radius: 3)
                 )
-            
+                .minimumScaleFactor(0.9)
+
+
             VStack(alignment: .leading) {
-                HStack {
+                HStack(alignment: .bottom) {
                     Text(mission.rocket)
-                        .font(.title2)
+                        .font(.title3)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
-                        .minimumScaleFactor(0.5)
-                        .fixedSize()
+                        .lineLimit(1)
+                        .truncationMode(.tail)
                     
                     Spacer(minLength: 5)
                     
@@ -38,31 +41,64 @@ struct MissionWidgetRow: View {
                         Image(systemName: "calendar")
                             .font(.subheadline)
                             .foregroundColor(.white)
-                        
+
                         Text(mission.date)
                             .font(.subheadline)
                             .foregroundColor(.white)
-                        
                     }
-                    .padding(.vertical, 5)
-                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 7)
                     .background(
                         ContainerRelativeShape()
                             .foregroundColor(Color.black.opacity(0.5))
                     )
                 }
-                
                 Text(mission.payload)
                     .foregroundColor(.white)
-                    .minimumScaleFactor(0.5)
-                    .fixedSize()
+                    .lineLimit(1)
+                    .truncationMode(.tail)
             }
         }
     }
 }
 
-struct MissionWidgetRow_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+
+extension MissionWidgetRow {
+    struct Placeholder: View {
+        var mission = MissionProvider.placeholderMission
+        var body: some View {
+            HStack(spacing: 12.5) {
+                Rectangle()
+                    .fill(Color.primary.opacity(0.25))
+                    .cornerRadius(7.5)
+                    .shadow(radius: 3)
+                    .frame(width: 50, height: 50)
+                    .minimumScaleFactor(0.9)
+
+                VStack(alignment: .leading) {
+                    HStack(alignment: .bottom) {
+                        Text(mission.rocket)
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        
+                        Spacer(minLength: 5)
+                        
+                        HStack(alignment: .lastTextBaseline) {
+                            Text(mission.date)
+                                .font(.subheadline)
+                        }
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 7)
+                        .background(
+                            ContainerRelativeShape()
+                                .foregroundColor(Color.black.opacity(0.5))
+                        )
+                    }
+                    Text(mission.payload)
+                        
+                }
+            }
+            .redacted(reason: .placeholder)
+        }
     }
 }

@@ -25,12 +25,14 @@ struct SmallMissionWidget: View{
                         .resizable()
                         .scaledToFit()
                         .padding(5)
-                        .frame(width: 50, height: 50)
+                        .frame(width: 45, height: 45)
                         .background(
                             ContainerRelativeShape()
                                 .fill(Color.white)
                                 .shadow(radius: 3)
                         )
+                        .minimumScaleFactor(0.75)
+
                     
                     Spacer()
                 }
@@ -38,13 +40,15 @@ struct SmallMissionWidget: View{
                     .font(.title2)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
-                    .minimumScaleFactor(0.01)
+                    .minimumScaleFactor(0.6)
+                
                 
                 Text(mission.payload)
                     .foregroundColor(.white)
-                    .minimumScaleFactor(0.01)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.5)
                 
-                Spacer(minLength: 7.5)
+                Spacer(minLength: 5)
                 
                 HStack(alignment: .lastTextBaseline) {
                     Image(systemName: "calendar")
@@ -54,7 +58,6 @@ struct SmallMissionWidget: View{
                     Text(mission.date)
                         .font(.subheadline)
                         .foregroundColor(.white)
-                        
                 }
                 .padding(.vertical, 5)
                 .padding(.horizontal, 8)
@@ -68,12 +71,61 @@ struct SmallMissionWidget: View{
     }
 }
 
+
+extension SmallMissionWidget {
+    struct Placeholder: View {
+        var mission = MissionProvider.placeholderMission
+        var body: some View {
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color("background-gradient-start"), Color("background-gradient-end")]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        ContainerRelativeShape()
+                            .fill(Color.primary.opacity(0.25))
+                            .frame(width: 45, height: 45)
+                        
+                        Spacer()
+                    }
+                    
+                    Text(mission.rocket)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    
+                    Text(mission.payload)
+                        .font(.body)
+                    
+                    Spacer(minLength: 5)
+                    
+                    Text(mission.date)
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 8)
+                        .background(
+                            ContainerRelativeShape()
+                                .foregroundColor(Color.black.opacity(0.5))
+                        )
+                }
+                .padding(15)
+                .redacted(reason: .placeholder)
+            }
+        }
+    }
+}
+
+
 struct SmallMissionWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SmallMissionWidget(mission: MissionProvider.placeholderMission)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .colorScheme(.light)
+            
 
             SmallMissionWidget(mission: MissionProvider.placeholderMission)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))

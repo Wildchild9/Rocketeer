@@ -12,7 +12,7 @@ import SwiftUI
 struct RocketeerWidget: Widget {
     private let kind = "Upcoming_Launches"
     
-    var body: some WidgetConfiguration{
+    var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: MissionProvider()) { entry in
             WidgetEntryView(entry: entry)
         }
