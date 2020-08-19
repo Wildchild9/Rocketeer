@@ -32,7 +32,11 @@ struct LargeMissionWidget: View {
             
             VStack() {
                 ForEach(0...3, id: \.self) { i in
-                    MissionWidgetRow(mission: missions[i])
+					if missions.count > i {
+						MissionWidgetRow(mission: missions[i])
+					} else {
+						MissionWidgetRow.Placeholder()
+					}
                     if i < 3 {
                         Spacer(minLength: 7.5)
                         Divider()

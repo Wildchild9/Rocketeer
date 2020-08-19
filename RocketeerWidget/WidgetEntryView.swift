@@ -22,13 +22,13 @@ struct WidgetEntryView: View {
                 SmallMissionWidget(mission: entry.missions[0])
             }
         case .systemMedium:
-            if entry.missions.count < 2 {
-                MediumMissionWidget.Placeholder()
-            } else {
+			if entry.missions.isEmpty {
+				MediumMissionWidget.Placeholder()
+			} else {
                 MediumMissionWidget(missions: entry.missions)
-            }
+			}
         case .systemLarge:
-            if entry.missions.count < 4 {
+			if entry.missions.isEmpty {
                 LargeMissionWidget.Placeholder()
             } else {
                 LargeMissionWidget(missions: entry.missions)

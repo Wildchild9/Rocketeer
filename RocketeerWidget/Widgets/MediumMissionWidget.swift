@@ -24,11 +24,16 @@ struct MediumMissionWidget: View {
             )
             
             VStack() {
-                MissionWidgetRow(mission: missions[0])
+				MissionWidgetRow(mission: missions[0])
                 Spacer(minLength: 7.5)
                 Divider()
                 Spacer(minLength: 7.5)
-                MissionWidgetRow(mission: missions[1])
+				if missions.count > 1 {
+					MissionWidgetRow(mission: missions[1])
+				} else {
+					MissionWidgetRow.Placeholder()
+					
+				}
             }
             .padding(15)
 
