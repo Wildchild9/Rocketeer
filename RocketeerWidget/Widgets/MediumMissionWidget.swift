@@ -36,6 +36,30 @@ struct MediumMissionWidget: View {
     }
 }
 
+extension MediumMissionWidget {
+    struct Placeholder: View {
+        var body: some View {
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color("background-gradient-start"), Color("background-gradient-end")]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                
+                VStack() {
+                    MissionWidgetRow.Placeholder()
+                    Spacer(minLength: 7.5)
+                    Divider()
+                    Spacer(minLength: 7.5)
+                    MissionWidgetRow.Placeholder()
+                }
+                .padding(15)
+            }
+        }
+    }
+}
+
+
 struct MediumMissionWidget_Previews: PreviewProvider {
     static let missions = Array(repeating: Mission.placeholder, count: 2)
     
@@ -80,29 +104,6 @@ struct MediumMissionWidget_Previews: PreviewProvider {
                 .previewDevice("iPhone 8")
                 .previewContext(WidgetPreviewContext(family: .systemMedium))
                 .colorScheme(.dark)
-        }
-    }
-}
-
-extension MediumMissionWidget {
-    struct Placeholder: View {
-        var body: some View {
-            ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [Color("background-gradient-start"), Color("background-gradient-end")]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                
-                VStack() {
-                    MissionWidgetRow.Placeholder()
-                    Spacer(minLength: 7.5)
-                    Divider()
-                    Spacer(minLength: 7.5)
-                    MissionWidgetRow.Placeholder()
-                }
-                .padding(15)
-            }
         }
     }
 }

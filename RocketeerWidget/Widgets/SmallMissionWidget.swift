@@ -123,11 +123,42 @@ struct SmallMissionWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SmallMissionWidget(mission: Mission.placeholder)
+                .previewDevice("iPhone 11")
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .colorScheme(.light)
             
-
             SmallMissionWidget(mission: Mission.placeholder)
+                .previewDevice("iPhone 11")
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .colorScheme(.dark)
+            
+            SmallMissionWidget(mission: Mission.placeholder)
+                .previewDevice("iPhone 8")
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .colorScheme(.light)
+            
+            SmallMissionWidget(mission: Mission.placeholder)
+                .previewDevice("iPhone 8")
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .colorScheme(.dark)
+            
+            SmallMissionWidget.Placeholder()
+                .previewDevice("iPhone 11")
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .colorScheme(.light)
+            
+            SmallMissionWidget.Placeholder()
+                .previewDevice("iPhone 11")
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .colorScheme(.dark)
+            
+            SmallMissionWidget.Placeholder()
+                .previewDevice("iPhone 8")
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+                .colorScheme(.light)
+            
+            SmallMissionWidget.Placeholder()
+                .previewDevice("iPhone 8")
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .colorScheme(.dark)
         }

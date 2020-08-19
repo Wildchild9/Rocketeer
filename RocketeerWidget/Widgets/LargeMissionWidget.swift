@@ -45,6 +45,32 @@ struct LargeMissionWidget: View {
     }
 }
 
+extension LargeMissionWidget {
+    struct Placeholder: View {
+        var body: some View {
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color("background-gradient-start"), Color("background-gradient-end")]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                
+                VStack() {
+                    ForEach(0...3, id: \.self) { i in
+                        MissionWidgetRow.Placeholder()
+                        if i < 3 {
+                            Spacer(minLength: 7.5)
+                            Divider()
+                            Spacer(minLength: 7.5)
+                        }
+                    }
+                }
+                .padding(15)
+            }
+        }
+    }
+}
+
 struct LargeMissionWidget_Previews: PreviewProvider {
     static let missions = Array(repeating: Mission.placeholder, count: 4)
     
@@ -89,32 +115,6 @@ struct LargeMissionWidget_Previews: PreviewProvider {
                 .previewDevice("iPhone 8")
                 .previewContext(WidgetPreviewContext(family: .systemLarge))
                 .colorScheme(.dark)
-        }
-    }
-}
-
-extension LargeMissionWidget {
-    struct Placeholder: View {
-        var body: some View {
-            ZStack {
-                LinearGradient(
-                    gradient: Gradient(colors: [Color("background-gradient-start"), Color("background-gradient-end")]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                
-                VStack() {
-                    ForEach(0...3, id: \.self) { i in
-                        MissionWidgetRow.Placeholder()
-                        if i < 3 {
-                            Spacer(minLength: 7.5)
-                            Divider()
-                            Spacer(minLength: 7.5)
-                        }
-                    }
-                }
-                .padding(15)
-            }
         }
     }
 }
