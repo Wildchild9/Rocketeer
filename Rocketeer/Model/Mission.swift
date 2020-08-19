@@ -10,8 +10,10 @@ import Foundation
 
 var favouriteLaunches: [String] = UserDefaults.standard.stringArray(forKey: "favouriteLaunches") ?? []
 
-struct Mission: Identifiable, Codable {
-	var id:UUID = UUID()
+struct Mission: Identifiable, Codable, Hashable {
+    var id: String {
+        return rocket.lowercased() + payload.lowercased()
+    }
     var date: String
     var rocket: String
     var payload: String
@@ -66,4 +68,9 @@ struct Mission: Identifiable, Codable {
         }
         return launchTime
     }
+    
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.rocket == rhs.rocket && lhs.payload == rhs.payload
+    }
 }
+
