@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C200D8B224DBA5A5003CBC0F /* WidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200D8B024DBA568003CBC0F /* WidgetEntryView.swift */; };
+		0C067C6124ECE19C00D3B5E9 /* FavouriteMissionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C067C6024ECE19C00D3B5E9 /* FavouriteMissionProvider.swift */; };
 		0CCA553624EC5E290023D5ED /* b64Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCA553524EC5E290023D5ED /* b64Encode.swift */; };
 		0CD5507A24EC42DC00EFD462 /* insertEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5507824EC42CC00EFD462 /* insertEvent.swift */; };
+		C200D8B224DBA5A5003CBC0F /* WidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C200D8B024DBA568003CBC0F /* WidgetEntryView.swift */; };
 		C208648524D9C6EC00B22682 /* RocketeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648424D9C6EC00B22682 /* RocketeerApp.swift */; };
 		C208648724D9C6EC00B22682 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208648624D9C6EC00B22682 /* ContentView.swift */; };
 		C208648924D9C6EF00B22682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C208648824D9C6EF00B22682 /* Assets.xcassets */; };
@@ -17,7 +18,7 @@
 		C208649724D9C6F000B22682 /* RocketeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C208649624D9C6F000B22682 /* RocketeerTests.swift */; };
 		C20864A224D9C6F000B22682 /* RocketeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20864A124D9C6F000B22682 /* RocketeerUITests.swift */; };
 		C250BE0A24DB935C00EC316A /* SmallMissionWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C250BE0924DB935C00EC316A /* SmallMissionWidget.swift */; };
-		C250BE0F24DB95D400EC316A /* MissionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C250BE0624DB922A00EC316A /* MissionProvider.swift */; };
+		C250BE0F24DB95D400EC316A /* UpcomingMissionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C250BE0624DB922A00EC316A /* UpcomingMissionProvider.swift */; };
 		C250BE1024DB95D700EC316A /* MissionEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C250BE0224DB90F200EC316A /* MissionEntry.swift */; };
 		C25106A824D9CA9D00256231 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106A724D9CA9C00256231 /* Mission.swift */; };
 		C25106AB24D9CBCE00256231 /* String+matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25106AA24D9CBCE00256231 /* String+matches.swift */; };
@@ -87,9 +88,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C200D8B024DBA568003CBC0F /* WidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntryView.swift; sourceTree = "<group>"; };
+		0C067C6024ECE19C00D3B5E9 /* FavouriteMissionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMissionProvider.swift; sourceTree = "<group>"; };
 		0CCA553524EC5E290023D5ED /* b64Encode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = b64Encode.swift; sourceTree = "<group>"; };
 		0CD5507824EC42CC00EFD462 /* insertEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insertEvent.swift; sourceTree = "<group>"; };
+		C200D8B024DBA568003CBC0F /* WidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntryView.swift; sourceTree = "<group>"; };
 		C208648124D9C6EC00B22682 /* Rocketeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocketeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C208648424D9C6EC00B22682 /* RocketeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketeerApp.swift; sourceTree = "<group>"; };
 		C208648624D9C6EC00B22682 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		C20864A124D9C6F000B22682 /* RocketeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketeerUITests.swift; sourceTree = "<group>"; };
 		C20864A324D9C6F000B22682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C250BE0224DB90F200EC316A /* MissionEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionEntry.swift; sourceTree = "<group>"; };
-		C250BE0624DB922A00EC316A /* MissionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionProvider.swift; sourceTree = "<group>"; };
+		C250BE0624DB922A00EC316A /* UpcomingMissionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMissionProvider.swift; sourceTree = "<group>"; };
 		C250BE0924DB935C00EC316A /* SmallMissionWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallMissionWidget.swift; sourceTree = "<group>"; };
 		C25106A724D9CA9C00256231 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		C25106AA24D9CBCE00256231 /* String+matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+matches.swift"; sourceTree = "<group>"; };
@@ -301,9 +303,10 @@
 			children = (
 				C2B94F0D24DA06D4009829EB /* RocketeerWidget.swift */,
 				C250BE0224DB90F200EC316A /* MissionEntry.swift */,
-				C250BE0624DB922A00EC316A /* MissionProvider.swift */,
-				C200D8B024DBA568003CBC0F /* WidgetEntryView.swift */,
+				C250BE0624DB922A00EC316A /* UpcomingMissionProvider.swift */,
 				C2A6A99A24DBB217001013AD /* MissionWidgetRow.swift */,
+				0C067C6024ECE19C00D3B5E9 /* FavouriteMissionProvider.swift */,
+				C200D8B024DBA568003CBC0F /* WidgetEntryView.swift */,
 				C250BE0824DB934200EC316A /* Widgets */,
 				C2A6A99724DBAA99001013AD /* Resources */,
 			);
@@ -527,12 +530,13 @@
 				C250BE0A24DB935C00EC316A /* SmallMissionWidget.swift in Sources */,
 				C250BE1024DB95D700EC316A /* MissionEntry.swift in Sources */,
 				C2B94F1C24DA0798009829EB /* loadLaunchData.swift in Sources */,
-				C250BE0F24DB95D400EC316A /* MissionProvider.swift in Sources */,
+				C250BE0F24DB95D400EC316A /* UpcomingMissionProvider.swift in Sources */,
 				C200D8B224DBA5A5003CBC0F /* WidgetEntryView.swift in Sources */,
 				C2B94F2024DA0B10009829EB /* StringProtocol+firstMatch.swift in Sources */,
 				C2A6A99D24DBB3B1001013AD /* LargeMissionWidget.swift in Sources */,
 				C2B94F1D24DA079C009829EB /* Mission.swift in Sources */,
 				C2B94F0E24DA06D4009829EB /* RocketeerWidget.swift in Sources */,
+				0C067C6124ECE19C00D3B5E9 /* FavouriteMissionProvider.swift in Sources */,
 				C2B94F2224DA0B62009829EB /* String+doesMatch.swift in Sources */,
 				C2B94F2124DA0B20009829EB /* Regex.swift in Sources */,
 			);
