@@ -27,7 +27,9 @@ struct MissionProvider: TimelineProvider {
         var missions = [Mission]()
         loadLaunchData(to: &missions, limitedBy: 4)
         let entry = MissionEntry(date: Date(), missions: missions)
-        let timeline = Timeline(entries: [entry], policy: .atEnd)
+        let date = Date()
+        let nextUpdateDate = Calendar.current.date(byAdding: .hour, value: 1, to: date)!
+        let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
         completion(timeline)
     }
 }
