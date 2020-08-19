@@ -1,5 +1,5 @@
 //
-//  WidgetEntryView.swift
+//  UpcomingWidgetEntryView.swift
 //  Rocketeer
 //
 //  Created by Noah Wilder on 2020-08-05.
@@ -8,8 +8,8 @@
 import SwiftUI
 import WidgetKit
 
-struct WidgetEntryView: View {
-    let entry: MissionProvider.Entry
+struct UpcomingWidgetEntryView: View {
+    let entry: UpcomingMissionProvider.Entry
     
     @Environment(\.widgetFamily) var family
     
