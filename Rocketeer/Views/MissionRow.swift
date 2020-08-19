@@ -10,7 +10,7 @@ import EventKit
 
 struct MissionRow: View {
     var mission: Mission
-    @Binding var favourites: [String]
+    @Binding var favourites: Set<String>
     var body: some View {
         NavigationLink(destination: MissionView(mission: mission, favourites: $favourites)) {
             HStack {
@@ -35,7 +35,7 @@ struct MissionRow: View {
 				.padding(2)
 				.background(
 				RoundedRectangle(cornerRadius: 4)
-					.fill( checkStorage(key: mission.key) ? Color.blue.opacity(0.4) : Color.clear)
+                    .fill(favourites.contains(mission.id) ? Color.blue.opacity(0.4) : Color.clear)
 				)
                 Spacer()
                 Text(mission.date)

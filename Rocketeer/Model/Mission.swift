@@ -10,8 +10,10 @@ import Foundation
 
 var favouriteLaunches: [String] = UserDefaults.standard.stringArray(forKey: "favouriteLaunches") ?? []
 
-struct Mission: Identifiable, Codable {
-	var id:UUID = UUID()
+struct Mission: Identifiable, Codable, Hashable {
+    var id: String {
+        return rocket.lowercased() + payload.lowercased()
+    }
     var date: String
     var rocket: String
     var payload: String
@@ -76,3 +78,4 @@ struct Mission: Identifiable, Codable {
         description: "A SpaceX Falcon 9 rocket will be sending up the company's 14th Starlink satelite into a geostationary orbit around the Earth. This will be the newest addition to SpaceX's growing constellation of Starlink satellites."
     )
 }
+
