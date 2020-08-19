@@ -31,7 +31,9 @@ struct FavouriteMissionProvider: TimelineProvider {
 		let favs = defaults.stringArray(forKey:"favouriteLaunches") ?? []
 		missions = missions.filter{favs.contains($0.id)}
         let entry = MissionEntry(date: Date(), missions: missions)
-        let timeline = Timeline(entries: [entry], policy: .atEnd)
+		let date = Date()
+		let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 10, to: date)!
+        let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
         completion(timeline)
     }
 }
