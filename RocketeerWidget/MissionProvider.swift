@@ -8,17 +8,9 @@
 import WidgetKit
 
 struct MissionProvider: TimelineProvider {
-    static let placeholderMission = Mission(
-        date: "Nov. 1",
-        rocket: "Falcon 9",
-        payload: "Starlink",
-        launchTime: "10 a.m.",
-        launchSite: "",
-        description: ""
-    )
     
     func snapshot(with context: Context, completion: @escaping (MissionEntry) -> ()) {
-        let missions = Array(repeating: MissionProvider.placeholderMission, count: 4)
+        let missions = Array(repeating: Mission.placeholder, count: 4)
         let entry = MissionEntry(date: Date(), missions: missions)
         completion(entry)
     }

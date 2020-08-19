@@ -46,7 +46,7 @@ struct LargeMissionWidget: View {
 }
 
 struct LargeMissionWidget_Previews: PreviewProvider {
-    static let missions = Array(repeating: MissionProvider.placeholderMission, count: 4)
+    static let missions = Array(repeating: Mission.placeholder, count: 4)
     
     static var previews: some View {
         Group {

@@ -37,7 +37,7 @@ struct MediumMissionWidget: View {
 }
 
 struct MediumMissionWidget_Previews: PreviewProvider {
-    static let missions = Array(repeating: MissionProvider.placeholderMission, count: 2)
+    static let missions = Array(repeating: Mission.placeholder, count: 2)
     
     static var previews: some View {
         Group {

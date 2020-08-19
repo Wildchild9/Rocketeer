@@ -74,7 +74,7 @@ struct SmallMissionWidget: View{
 
 extension SmallMissionWidget {
     struct Placeholder: View {
-        var mission = MissionProvider.placeholderMission
+        var mission = Mission.placeholder
         var body: some View {
             ZStack {
                 LinearGradient(
@@ -122,12 +122,12 @@ extension SmallMissionWidget {
 struct SmallMissionWidget_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SmallMissionWidget(mission: MissionProvider.placeholderMission)
+            SmallMissionWidget(mission: Mission.placeholder)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .colorScheme(.light)
             
 
-            SmallMissionWidget(mission: MissionProvider.placeholderMission)
+            SmallMissionWidget(mission: Mission.placeholder)
                 .previewContext(WidgetPreviewContext(family: .systemSmall))
                 .colorScheme(.dark)
         }

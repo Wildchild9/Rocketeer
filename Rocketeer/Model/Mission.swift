@@ -60,4 +60,13 @@ struct Mission: Identifiable, Codable {
         }
         return launchTime
     }
+    
+    static let placeholder = Mission(
+        date: "Nov. 1",
+        rocket: "Falcon 9",
+        payload: "Starlink",
+        launchTime: "10 a.m.",
+        launchSite: "Cape Canaveral, Florida",
+        description: "A SpaceX Falcon 9 rocket will be sending up the company's 14th Starlink satelite into a geostationary orbit around the Earth. This will be the newest addition to SpaceX's growing constellation of Starlink satellites."
+    )
 }

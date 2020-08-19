@@ -65,7 +65,7 @@ struct MissionWidgetRow: View {
 
 extension MissionWidgetRow {
     struct Placeholder: View {
-        var mission = MissionProvider.placeholderMission
+        var mission = Mission.placeholder
         var body: some View {
             HStack(spacing: 12.5) {
                 Rectangle()
