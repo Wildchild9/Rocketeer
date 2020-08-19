@@ -26,7 +26,10 @@ struct FavouriteMissionProvider: TimelineProvider {
     
     func timeline(with context: Context, completion: @escaping (Timeline<MissionEntry>) -> ()) {
         var missions = [Mission]()
-		missions = UserDefaults.standard.stringArray(forKey: "favouriteLaunches") ?? []
+        loadLaunchData(to: &missions)
+		let defaults = UserDefaults.init(suiteName: "group.com.noahwilder.Rocketeer")!
+		let favs = defaults.stringArray(forKey:"favouriteLaunches") ?? []
+		missions = missions.filter{favs.contains($0.id)}
         let entry = MissionEntry(date: Date(), missions: missions)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)

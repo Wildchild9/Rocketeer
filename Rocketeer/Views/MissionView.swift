@@ -12,6 +12,7 @@ let eventStore = EKEventStore()
 
 struct MissionView: View {
     var mission: Mission
+	let defaults = UserDefaults.init(suiteName: "group.com.noahwilder.Rocketeer")!
     @State var showAlert = false
     @State var cal = "c"
     @State var st = "s"
@@ -99,7 +100,7 @@ struct MissionView: View {
                 if !favourites.insert(mission.id).inserted {
                     favourites.remove(mission.id)
                 }
-                UserDefaults.standard.setValue(Array(favourites), forKey: "favouriteLaunches")
+                defaults.setValue(Array(favourites), forKey: "favouriteLaunches")
             }, label: {
                 Image(systemName: favourites.contains(mission.id) ? "star.fill" : "star")
             })

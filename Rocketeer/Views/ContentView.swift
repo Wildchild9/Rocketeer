@@ -9,7 +9,7 @@ import SwiftUI
 import EventKit
 
 struct ContentView: View {
-    
+	let defaults = UserDefaults.init(suiteName: "group.com.noahwilder.Rocketeer")!
     @State var missions: [Mission] = []
     @State var favourites: Set<String> = []
 	@State var showAlert = false
@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
 			VStack {
-                Text(favourites.count > 1 ? "Some" : "None")
+//                Text(favourites.count > 1 ? "Some" : "None")
 				List(missions) { mission in
                     MissionRow(mission: mission, favourites: $favourites)
                         .contextMenu(menuItems: {
@@ -26,7 +26,7 @@ struct ContentView: View {
                                 if !favourites.insert(mission.id).inserted {
                                     favourites.remove(mission.id)
                                 }
-                                UserDefaults.standard.setValue(Array(favourites), forKey: "favouriteLaunches")
+                                defaults.setValue(Array(favourites), forKey: "favouriteLaunches")
                             }) {
                                 if favourites.contains(mission.id) {
                                     Text("Unfavourite")
@@ -101,7 +101,7 @@ struct ContentView: View {
         }
         .onAppear {
             loadLaunchData(to: &missions)
-            favourites = Set<String>(UserDefaults.standard.stringArray(forKey: "favouriteLaunches") ?? [])
+            favourites = Set<String>(defaults.stringArray(forKey: "favouriteLaunches") ?? [])
             if !missions.isEmpty {
                 favourites = favourites.intersection(missions.map(\.id))
             }
