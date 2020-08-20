@@ -103,13 +103,6 @@ extension SmallMissionWidget {
                     
                     Text(mission.date)
                         .font(.subheadline)
-                        .foregroundColor(.white)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal, 8)
-                        .background(
-                            ContainerRelativeShape()
-                                .foregroundColor(Color.black.opacity(0.5))
-                        )
                 }
                 .padding(15)
                 .redacted(reason: .placeholder)

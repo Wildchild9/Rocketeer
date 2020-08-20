@@ -76,23 +76,15 @@ extension MissionWidgetRow {
                     .minimumScaleFactor(0.9)
 
                 VStack(alignment: .leading) {
-                    HStack(alignment: .bottom) {
+                    HStack(alignment: .center) {
                         Text(mission.rocket)
                             .font(.title3)
                             .fontWeight(.semibold)
                         
                         Spacer(minLength: 5)
                         
-                        HStack(alignment: .lastTextBaseline) {
-                            Text(mission.date)
-                                .font(.subheadline)
-                        }
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 7)
-                        .background(
-                            ContainerRelativeShape()
-                                .foregroundColor(Color.black.opacity(0.5))
-                        )
+                        Text(mission.date)
+                            .font(.subheadline)
                     }
                     Text(mission.payload)
                         
