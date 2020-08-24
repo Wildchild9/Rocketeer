@@ -24,12 +24,16 @@ struct MediumMissionWidget: View {
             )
             
             VStack() {
-				MissionWidgetRow(mission: missions[0])
+				Link(destination: missions[0].url) {
+					MissionWidgetRow(mission: missions[0])
+				}
                 Spacer(minLength: 7.5)
                 Divider()
                 Spacer(minLength: 7.5)
 				if missions.count > 1 {
-					MissionWidgetRow(mission: missions[1])
+					Link(destination: missions[1].url) {
+						MissionWidgetRow(mission: missions[1])
+					}
 				} else {
 					MissionWidgetRow.Placeholder()
 					

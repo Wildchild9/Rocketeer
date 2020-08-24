@@ -33,7 +33,9 @@ struct LargeMissionWidget: View {
             VStack() {
                 ForEach(0...3, id: \.self) { i in
 					if missions.count > i {
-						MissionWidgetRow(mission: missions[i])
+						Link(destination:missions[i].url){
+							MissionWidgetRow(mission: missions[i])
+						}
 					} else {
 						MissionWidgetRow.Placeholder()
 					}

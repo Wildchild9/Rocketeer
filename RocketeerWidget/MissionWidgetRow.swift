@@ -67,35 +67,33 @@ extension MissionWidgetRow {
     struct Placeholder: View {
         var mission = Mission.placeholder
         var body: some View {
-			Link(destination: URL(string: "rocketeer://\(mission.id)")!){
-				HStack(spacing: 12.5) {
-					Rectangle()
-						.fill(Color.primary.opacity(0.25))
-						.cornerRadius(7.5)
-						.shadow(radius: 3)
-						.frame(width: 50, height: 50)
-						.minimumScaleFactor(0.9)
+			HStack(spacing: 12.5) {
+				Rectangle()
+					.fill(Color.primary.opacity(0.25))
+					.cornerRadius(7.5)
+					.shadow(radius: 3)
+					.frame(width: 50, height: 50)
+					.minimumScaleFactor(0.9)
 
-					VStack(alignment: .leading) {
-						HStack(alignment: .center) {
-							Text(mission.rocket)
-								.font(.title3)
-								.fontWeight(.semibold)
-							
-							Spacer(minLength: 5)
-							
-							Text(mission.date)
-								.font(.subheadline)
-						}
-						Text(mission.payload)
-							
+				VStack(alignment: .leading) {
+					HStack(alignment: .center) {
+						Text(mission.rocket)
+							.font(.title3)
+							.fontWeight(.semibold)
+						
+						Spacer(minLength: 5)
+						
+						Text(mission.date)
+							.font(.subheadline)
 					}
+					Text(mission.payload)
+						
 				}
-				.redacted(reason: .placeholder)
-				.onTapGesture(perform: {
-					print(false)
-				})
 			}
+			.redacted(reason: .placeholder)
+			.onTapGesture(perform: {
+				print(false)
+			})
 		}
     }
 }
