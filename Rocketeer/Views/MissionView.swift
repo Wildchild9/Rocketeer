@@ -12,6 +12,7 @@ let eventStore = EKEventStore()
 
 struct MissionView: View {
     var mission: Mission
+	var modal: Bool = false
 	let defaults = UserDefaults.init(suiteName: "group.com.noahwilder.Rocketeer")!
     @State var showAlert = false
     @State var cal = "c"
@@ -20,7 +21,13 @@ struct MissionView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 15) {
+				VStack(alignment: .leading, spacing: 15) {
+				if modal {
+				Text(mission.rocket)
+					.font(.largeTitle)
+					.bold()
+					.padding(.bottom, 20)
+			}
                 HStack {
                     Field(title: "Date", contents: mission.date)
                     if mission.date != "TBD" && !mission.date.lowercased().contains("quarter") {
@@ -114,21 +121,22 @@ struct ModalMissionView: View {
 	@Binding var favourites: Set<String>
 	@Binding var show: Bool
 	var body: some View {
-		VStack(alignment:.leading) {
-			Button(action: {
-				show.toggle()
-			}, label: {
-				Image(systemName: "chevron.left")
-				Text("Back")
-			})
-			.foregroundColor(.blue)
-			.padding(20)
-			Text(mission.rocket)
-				.font(.largeTitle)
-				.bold()
+		VStack {
+			HStack {
+				Button(action: {
+					show.toggle()
+				}, label: {
+					Image(systemName: "chevron.left")
+					Text("Back")
+				})
+				.foregroundColor(.blue)
 				.padding(.horizontal, 20)
-
-			MissionView(mission: mission, favourites: $favourites)
+				.padding(.top, 20)
+				.padding(.bottom, -20)
+				Spacer()
+			}
+			MissionView(mission: mission, modal: true, favourites: $favourites)
 		}
+		
 	}
 }
