@@ -12,7 +12,7 @@ var favouriteLaunches: [String] = UserDefaults.standard.stringArray(forKey: "fav
 
 struct Mission: Identifiable, Codable, Hashable {
     var id: String {
-        return rocket.lowercased() + payload.lowercased()
+		return rocket.lowercased().replacingOccurrences(of: " ", with: "_") + payload.lowercased().replacingOccurrences(of: " ", with: "_")
     }
     var date: String
     var rocket: String
