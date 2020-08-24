@@ -15,10 +15,13 @@ struct ContentView: View {
 	@State var showAlert = false
 	@State var cal = "c"
 	@State var st = "s"
+	@State var showSheet = false;
+	@State var sentMission: Mission = Mission.placeholder;
     var body: some View {
         NavigationView {
 			VStack {
 //                Text(favourites.count > 1 ? "Some" : "None")
+				
 				List(missions) { mission in
                     MissionRow(mission: mission, favourites: $favourites)
                         .contextMenu(menuItems: {
@@ -95,9 +98,14 @@ struct ContentView: View {
                         .alert(isPresented: $showAlert) {
                             Alert(title: Text("Added \(mission.rocket + " Launch") Event"), message: Text("Event added to '\(cal)' calendar, for \(st)"))
                         }
+						.sheet(isPresented: $showSheet){
+							ModalMissionView(mission: $sentMission, favourites: $favourites, show: $showSheet)
+						}
                 }
                 .navigationTitle("Launches")
+				
             }
+			
         }
         .onAppear {
             loadLaunchData(to: &missions)
@@ -106,6 +114,15 @@ struct ContentView: View {
                 favourites = favourites.intersection(missions.map(\.id))
             }
         }
+		.onOpenURL{ url in
+			let key = "\(url)".lowercased().replacingOccurrences(of: "rocketeer://", with: "")
+			for m in missions {
+				if m.id == key {
+					sentMission = m
+					showSheet = true
+				}
+			}
+		}
     }
     
     
