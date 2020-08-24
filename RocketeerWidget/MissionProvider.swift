@@ -24,4 +24,10 @@ struct MissionProvider: TimelineProvider {
         let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
         completion(timeline)
     }
+    
+    func placeholder(in context: Context) -> MissionEntry {
+        let missions = Array(repeating: Mission.placeholder, count: 4)
+        let entry = MissionEntry(date: Date(), missions: missions)
+        return entry
+    }
 }
