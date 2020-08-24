@@ -67,6 +67,7 @@ struct SmallMissionWidget: View{
                 )
             }
             .padding(15)
+			.widgetURL(URL(string: "rocketeer://\(mission.id)"))
         }
     }
 }
