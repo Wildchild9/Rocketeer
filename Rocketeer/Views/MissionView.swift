@@ -109,27 +109,9 @@ struct MissionView: View {
     }
 }
 
-
-struct MissionView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        NavigationView {
-            MissionView(mission: Mission(date: "Aug 11",
-                                         rocket: "Falcon 9",
-                                         payload: "Starlink 11",
-                                         launchTime: "4 pm",
-                                         launchSite: "Florida or something",
-                                         description: "sdkl;alfsdajfklafs;afsfjkj"),
-                        favourites: .constant([])
-            )
-            
-        }
-        .colorScheme(.dark)
-    }
-}
-
 struct ModalMissionView: View {
-	var mission: Mission
+	@Binding var mission: Mission
+	@Binding var favourites: Set<String>
 	@Binding var show: Bool
 	var body: some View {
 		VStack(alignment:.leading) {
@@ -139,24 +121,14 @@ struct ModalMissionView: View {
 				Image(systemName: "chevron.left")
 				Text("Back")
 			})
+			.foregroundColor(.blue)
 			.padding(20)
 			Text(mission.rocket)
 				.font(.largeTitle)
 				.bold()
 				.padding(.horizontal, 20)
-	
-			MissionView(mission: mission)
-		}
-	}
-}
-var x = true
-struct MissionView_Previews: PreviewProvider {
-	static var previews: some View {
-		Group {
-//			ModalMissionView(mission: Mission.placeholder)
-			NavigationView {
-				MissionView(mission: Mission.placeholder)
-			}
+
+			MissionView(mission: mission, favourites: $favourites)
 		}
 	}
 }
