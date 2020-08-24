@@ -127,3 +127,36 @@ struct MissionView_Previews: PreviewProvider {
         .colorScheme(.dark)
     }
 }
+
+struct ModalMissionView: View {
+	var mission: Mission
+	@Binding var show: Bool
+	var body: some View {
+		VStack(alignment:.leading) {
+			Button(action: {
+				show.toggle()
+			}, label: {
+				Image(systemName: "chevron.left")
+				Text("Back")
+			})
+			.padding(20)
+			Text(mission.rocket)
+				.font(.largeTitle)
+				.bold()
+				.padding(.horizontal, 20)
+	
+			MissionView(mission: mission)
+		}
+	}
+}
+var x = true
+struct MissionView_Previews: PreviewProvider {
+	static var previews: some View {
+		Group {
+//			ModalMissionView(mission: Mission.placeholder)
+			NavigationView {
+				MissionView(mission: Mission.placeholder)
+			}
+		}
+	}
+}
