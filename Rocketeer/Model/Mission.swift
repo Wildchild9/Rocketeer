@@ -14,6 +14,9 @@ struct Mission: Identifiable, Codable, Hashable {
     var id: String {
 		return rocket.lowercased().replacingOccurrences(of: " ", with: "_") + payload.lowercased().replacingOccurrences(of: " ", with: "_")
     }
+	var url: URL {
+		return URL(string: "rocketeer://"+id)!
+	}
     var date: String
     var rocket: String
     var payload: String
