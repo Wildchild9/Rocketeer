@@ -105,7 +105,7 @@ struct ContentView: View {
             if !missions.isEmpty {
                 favourites = favourites.intersection(missions.map(\.id))
             }
-        }
+        }.accentColor(Color("accent-orange"))
     }
     
     
