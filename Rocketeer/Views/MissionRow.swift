@@ -9,10 +9,10 @@ import SwiftUI
 import EventKit
 
 struct MissionRow: View {
-    var mission: Mission
+    @State var mission: Mission
     @Binding var favourites: Set<String>
     var body: some View {
-        NavigationLink(destination: MissionView(mission: mission, favourites: $favourites)) {
+		NavigationLink(destination: MissionView(mission: $mission, favourites: $favourites)) {
             HStack {
 				mission.logo
 					.resizable()
@@ -35,8 +35,9 @@ struct MissionRow: View {
 				.padding(2)
 				.background(
 				RoundedRectangle(cornerRadius: 4)
-                    .fill(favourites.contains(mission.id) ? Color.blue.opacity(0.4) : Color.clear)
+                    .fill(favourites.contains(mission.id) ? Color("accent-orange").opacity(0.4) : Color.clear)
 				)
+				.animation(.easeInOut(duration:0.2))
                 Spacer()
                 Text(mission.date)
             }
