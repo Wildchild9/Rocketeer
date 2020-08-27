@@ -302,6 +302,7 @@ struct MapViewAdvance: UIViewRepresentable {
 		if !checkpoints.isEmpty {
 			x.centerCoordinate = checkpoints[0].coordinate
 		}
+		x.mapType = .satelliteFlyover
 		return x
 	}
 	func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
