@@ -151,6 +151,10 @@ struct MissionView: View {
 										)
 										.padding(.horizontal, 15)
 										.padding(.bottom, 40)
+										.onAppear(){
+											checkpoints.append(Checkpoint(title:"Launch Site", coordinate:mission.coordinate))
+											
+										}
 								}
 								.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*4/10, alignment: .top)
 								.tabViewStyle(PageTabViewStyle())
@@ -161,10 +165,6 @@ struct MissionView: View {
 						//						.frame(minHeight: UIScreen.main.bounds.height)
 					}
 					
-			
-		}
-		.onAppear(){
-			checkpoints.append(Checkpoint(title:"Launch Site", coordinate:mission.coordinate))
 			
 		}
 		//		.navigationBarHidden(true)
@@ -299,14 +299,21 @@ struct MapViewAdvance: UIViewRepresentable {
 	
 	func makeUIView(context: Context) -> MKMapView {
 		let x = MKMapView()
-		x.centerCoordinate = checkpoints[0].coordinate
+		if !checkpoints.isEmpty {
+			x.centerCoordinate = checkpoints[0].coordinate
+		}
 		return x
 	}
 	func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-		mapView.centerCoordinate = checkpoints[0].coordinate
+		if !checkpoints.isEmpty {
+			mapView.centerCoordinate = checkpoints[0].coordinate
+		}
 	}
 	
 	func updateUIView(_ uiView: MKMapView, context: Context) {
 		uiView.addAnnotations(checkpoints)
+		if !checkpoints.isEmpty {
+			uiView.centerCoordinate = checkpoints[0].coordinate
+		}
 	}
 }
