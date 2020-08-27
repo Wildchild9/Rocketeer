@@ -181,6 +181,7 @@ struct BoxView: View {
 		VStack(alignment: .leading) {
 			HStack(alignment: .center) {
 				titleToSystemImage(title: title)
+					.opacity(0.6)
 				Text(title.lowercased())
 					.font(Font.title3.lowercaseSmallCaps().bold())
 					.opacity(0.6)
