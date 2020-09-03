@@ -38,7 +38,7 @@ struct Mission: Identifiable, Codable {
         case "electron|photon".asRegex:
             return Image("rocketlab-logo")
             
-        case "soyuz".asRegex:
+        case "soyuz|angara".asRegex:
             return Image("roscosmos-logo")
             
         case "falcon".asRegex:
@@ -82,7 +82,7 @@ func orgNameFromRocket(rocket: String) -> String {
 	case "electron|photon".asRegex:
 		return "Rocketlab"
 		
-	case "soyuz".asRegex:
+	case "soyuz|angara".asRegex:
 		return "Soyuz"
 		
 	case "falcon".asRegex:
@@ -158,7 +158,7 @@ func orgPicFromRocket(rocket: String) ->String{
 	case "electron|photon".asRegex:
 		return "rocketlab-logo"
 		
-	case "soyuz".asRegex:
+	case "soyuz|angara".asRegex:
 		return "roscosmos-logo"
 		
 	case "falcon".asRegex:
@@ -227,6 +227,9 @@ var accents = [
 	Color.init(.systemTeal),
 	Color("pink"),
 	Color("brown"),
-	Color("forest")
+	Color("forest"),
+	Color.init(.systemGray),
+	Color("aqua"),
+	Color("beige")
 ]
 

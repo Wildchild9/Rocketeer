@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MissionRow: View {
     var mission: Mission
-	var full: [String]
+	@Binding var full: [String]
 	var accent: Color {
 		var inn: Int = 0
 		if(full.contains(mission.org)) {
@@ -75,9 +75,8 @@ struct MissionRow: View {
 							HStack(alignment: .bottom){
 								Text(mission.date)
 									.foregroundColor(.yellow)
-	//								.bold()
 									.font(
-										Font.custom("SanFranciscoText-Light", size: 20)
+										.system(size: 16, weight: .bold, design: .rounded)
 									)
 									.padding(4)
 									.background(
@@ -105,42 +104,42 @@ struct MissionRow: View {
 			
 			}
 		}
-		.contentShape(
-			Rectangle()
-		)
-		.buttonStyle(PlainButtonStyle())
+//		 .contentShape(
+//			Rectangle()
+//		)
+//		.buttonStyle(PlainButtonStyle())
 		.padding(.trailing, 20)
 //		.padding(.vertical, 20)
 		.background(
 			RoundedCorners(tl: 5, tr: 20, bl: 5, br: 20)
-				.fill(Color("off-black"))
+				.fill(Color.black.opacity(0.5))
 		)
 		
 	
     }
 }
 
-struct MissionRow_Previews: PreviewProvider {
-	static var previews: some View {
-		NavigationView {
-			ZStack {
-				LinearGradient(gradient: Gradient(colors: [.black, .black]), startPoint: .top, endPoint: .bottom)
-					.edgesIgnoringSafeArea(.all)
-				ScrollView {
-					ForEach([Mission(date: "TBD", rocket: "Falcon 9", payload: "Starlink 9", launchTime: "", launchSite: "Cape Canaveral", description: "DLFHE:j;djfasio aosfijej;faksdjf;asdfjds;", org:"SpaceX"),Mission(date: "TBD", rocket: "Electron", payload: "BlackSky Global", launchTime: "", launchSite: "Cape Canaveral", description: "DLFHE:j;djfasio aosfijej;faksdjf;asdfjds;", org:"Rocketlab"),Mission(date: "TBD", rocket: "Atlas-V", payload: "Mars Perserverance rover", launchTime: "", launchSite: "Cape Canaveral", description: "DLFHE:j;djfasio aosfijej;faksdjf;asdfjds;", org:"ULA"),Mission(date: "TBD", rocket: "Falcon 9", payload: "Starlink 10/ BlackSky Global", launchTime: "", launchSite: "Cape Canaveral", description: "DLFHE:j;djfasio aosfijej;faksdjf;asdfjds;", org:"SpaceX")]) {
-						m in
-						MissionRow(mission: m, full: ["SpaceX", "Rocketlab", "ULA"])
-					.padding(.horizontal, 35)
-							.padding(.vertical, 10)
-					}
-				}
-					
-			}
-			
-		}
-		
-	}
-}
+//struct MissionRow_Previews: PreviewProvider {
+//	static var previews: some View {
+//		NavigationView {
+//			ZStack {
+//				LinearGradient(gradient: Gradient(colors: [.black, .black]), startPoint: .top, endPoint: .bottom)
+//					.edgesIgnoringSafeArea(.all)
+//				ScrollView {
+//					ForEach([Mission(date: "Sept. 1", rocket: "Falcon 9", payload: "Starlink 9", launchTime: "", launchSite: "Cape Canaveral", description: "DLFHE:j;djfasio aosfijej;faksdjf;asdfjds;", org:"SpaceX"),Mission(date: "TBD", rocket: "Electron", payload: "BlackSky Global", launchTime: "", launchSite: "Cape Canaveral", description: "DLFHE:j;djfasio aosfijej;faksdjf;asdfjds;", org:"Rocketlab"),Mission(date: "TBD", rocket: "Atlas-V", payload: "Mars Perserverance rover", launchTime: "", launchSite: "Cape Canaveral", description: "DLFHE:j;djfasio aosfijej;faksdjf;asdfjds;", org:"ULA"),Mission(date: "TBD", rocket: "Falcon 9", payload: "Starlink 10/ BlackSky Global", launchTime: "", launchSite: "Cape Canaveral", description: "DLFHE:j;djfasio aosfijej;faksdjf;asdfjds;", org:"SpaceX")]) {
+//						m in
+//						MissionRow(mission: m, full: ["SpaceX", "Rocketlab", "ULA"])
+//					.padding(.horizontal, 35)
+//							.padding(.vertical, 10)
+//					}
+//				}
+//
+//			}
+//
+//		}
+//
+//	}
+//}
 
 
 struct RoundedCorners: Shape {
