@@ -8,6 +8,7 @@
 import WidgetKit
 
 struct UpcomingMissionProvider: TimelineProvider {
+    
     static let placeholderMission = Mission(
         date: "Nov. 1",
         rocket: "Falcon 9",
@@ -17,13 +18,17 @@ struct UpcomingMissionProvider: TimelineProvider {
         description: ""
     )
     
-    func snapshot(with context: Context, completion: @escaping (MissionEntry) -> ()) {
+    func placeholder(in context: Context) -> MissionEntry {
+        return MissionEntry(date: Date(), missions: [Mission.placeholder])
+    }
+    
+    func getSnapshot(in context: Context, completion: @escaping (MissionEntry) -> ()) {
         let missions = Array(repeating: UpcomingMissionProvider.placeholderMission, count: 4)
         let entry = MissionEntry(date: Date(), missions: missions)
         completion(entry)
     }
     
-    func timeline(with context: Context, completion: @escaping (Timeline<MissionEntry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<MissionEntry>) -> ()) {
         var missions = [Mission]()
         loadLaunchData(to: &missions, limitedBy: 4)
         let entry = MissionEntry(date: Date(), missions: missions)
