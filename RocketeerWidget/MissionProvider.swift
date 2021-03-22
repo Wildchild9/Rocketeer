@@ -9,13 +9,13 @@ import WidgetKit
 
 struct MissionProvider: TimelineProvider {
     
-    func snapshot(with context: Context, completion: @escaping (MissionEntry) -> ()) {
+    func getSnapshot(in context: Context, completion: @escaping (MissionEntry) -> ()) {
         let missions = Array(repeating: Mission.placeholder, count: 4)
         let entry = MissionEntry(date: Date(), missions: missions)
         completion(entry)
     }
     
-    func timeline(with context: Context, completion: @escaping (Timeline<MissionEntry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<MissionEntry>) -> ()) {
         var missions = [Mission]()
         loadLaunchData(to: &missions, limitedBy: 4)
         let entry = MissionEntry(date: Date(), missions: missions)
