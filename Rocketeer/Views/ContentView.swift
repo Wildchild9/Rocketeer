@@ -18,7 +18,7 @@ struct ContentView: View, Identifiable {
 	@State var currentOrg = "all"
 	@State var missions: [Mission] = []
 	@State var newMissions: [Mission] = []
-	@State var labelShow = true
+	@State var labelShow = false
 	var body: some View {
 		NavigationView {
 			ZStack {
