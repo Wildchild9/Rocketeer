@@ -26,6 +26,7 @@ struct MissionView: View {
                 
                 Spacer()
             }
+            .foregroundColor(.white)
         }
         .padding(20)
         .navigationTitle(mission.rocket)
