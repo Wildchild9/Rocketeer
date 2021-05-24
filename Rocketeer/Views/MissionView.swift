@@ -44,7 +44,7 @@ struct MissionView: View {
 						.background(
 							RoundedRectangle(cornerRadius: 15)
 								.fill(
-									favourites.contains(mission.id) ? Color("accent-orange").opacity(0.5) : Color("wb").opacity(0.5)
+									favourites.contains(mission.id) ? Color("accent-orange").opacity(8) : Color("wb").opacity(0.5)
 								)
 								.animation(.easeInOut(duration:0.2))
 								.frame(width: UIScreen.main.bounds.width-40)

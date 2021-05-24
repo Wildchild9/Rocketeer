@@ -27,20 +27,33 @@ struct MissionRow: View {
 
                 VStack(alignment: .leading) {
                     Text(mission.rocket)
+                        .foregroundColor(.white)
+                        .bold()
                     
                     Text(mission.payload)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.white)
                         .font(.subheadline)
 				}
 				.padding(2)
 				.background(
 				RoundedRectangle(cornerRadius: 4)
-                    .fill(favourites.contains(mission.id) ? Color("accent-orange").opacity(0.4) : Color.clear)
+                    .fill(favourites.contains(mission.id) ? Color("accent-orange").opacity(8) : Color.clear)
 				)
 				.animation(.easeInOut(duration:0.2))
                 Spacer()
                 Text(mission.date)
             }
 		}
+        .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+            .fill(Color.black.opacity(0.5))
+        )
+    }
+}
+
+struct MissionRow_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
