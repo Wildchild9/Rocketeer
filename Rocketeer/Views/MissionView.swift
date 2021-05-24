@@ -27,7 +27,7 @@ struct MissionView: View {
 				.edgesIgnoringSafeArea(.all)
 			
 					ScrollView {
-						VStack {
+                        VStack(alignment: .leading) {
 							Text(mission.rocket)
 								.font(.system(size: 60, weight: .medium, design: .default))
 								.padding(.init(top:16, leading: 16, bottom:0, trailing: 16))
