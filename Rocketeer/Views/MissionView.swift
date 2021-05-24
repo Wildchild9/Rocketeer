@@ -27,39 +27,42 @@ struct MissionView: View {
 				.edgesIgnoringSafeArea(.all)
 			
 					ScrollView {
-                        VStack(alignment: .leading) {
-							Text(mission.rocket)
-								.font(.system(size: 60, weight: .medium, design: .default))
-								.padding(.init(top:16, leading: 16, bottom:0, trailing: 16))
-								.lineLimit(1)
-								.minimumScaleFactor(0.1)
-							Text(mission.payload)
-								.font(.system(size: 32, weight: .light, design: .default))
-								.padding(.horizontal, 16)
-								.padding(.bottom, 20)
-								.lineLimit(1)
-								.minimumScaleFactor(0.1)
-						}
-						.foregroundColor(favourites.contains(mission.id) ? .white : Color("bw"))
-						.background(
-							RoundedRectangle(cornerRadius: 15)
-								.fill(
-									favourites.contains(mission.id) ? Color("accent-orange").opacity(8) : Color("wb").opacity(0.5)
-								)
-								.animation(.easeInOut(duration:0.2))
-								.frame(width: UIScreen.main.bounds.width-40)
-							
-						)
-						.animation(.easeInOut(duration:0.2))
-						.onTapGesture(perform: {
-							
-							if !favourites.insert(mission.id).inserted {
-								favourites.remove(mission.id)
-							}
-							defaults.setValue(Array(favourites), forKey: "favouriteLaunches")
-						})
-						.padding(.init(top: -60, leading: 30, bottom: 16, trailing: 30))
-						
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(mission.rocket)
+                                    .font(.system(size: 60, weight: .medium, design: .default))
+                                    .padding(.init(top:16, leading: 16, bottom:0, trailing: 16))
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.1)
+                                Text(mission.payload)
+                                    .font(.system(size: 32, weight: .light, design: .default))
+                                    .padding(.horizontal, 16)
+                                    .padding(.bottom, 20)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.1)
+                            }
+                            Spacer()
+                        }
+                        .foregroundColor(favourites.contains(mission.id) ? .white : Color("bw"))
+                        .background(
+                            RoundedRectangle(cornerRadius: 15)
+                                .fill(
+                                    favourites.contains(mission.id) ? Color("accent-orange").opacity(8) : Color("wb").opacity(0.5)
+                                )
+                                .animation(.easeInOut(duration:0.2))
+                                .frame(width: UIScreen.main.bounds.width-40)
+                            
+                        )
+                        .animation(.easeInOut(duration:0.2))
+                        .onTapGesture(perform: {
+                            
+                            if !favourites.insert(mission.id).inserted {
+                                favourites.remove(mission.id)
+                            }
+                            defaults.setValue(Array(favourites), forKey: "favouriteLaunches")
+                        })
+                        .padding(.init(top: -60, leading: 30, bottom: 16, trailing: 30))
+                        
 						Spacer(minLength: 20)
 						
 						HStack(alignment: .top) {
@@ -141,7 +144,7 @@ struct MissionView: View {
 						}
 						Spacer()
 						ScrollView{
-							LazyHStack {
+							HStack {
 								TabView{
 									BoxView(mission: mission, title:"Description", text: mission.description, full:true)
 										.padding(.bottom, 40)
@@ -151,15 +154,17 @@ struct MissionView: View {
 										)
 										.padding(.horizontal, 15)
 										.padding(.bottom, 40)
-										.onAppear(){
-											checkpoints.append(Checkpoint(title:"Launch Site", coordinate:mission.coordinate))
-											
-										}
 								}
 								.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*4/10, alignment: .top)
 								.tabViewStyle(PageTabViewStyle())
 							}
 						}
+                        .onAppear(){
+                            DispatchQueue.global().async {
+                                checkpoints.append(Checkpoint(title:"Launch Site", coordinate:mission.coordinate))
+                            }
+                            
+                        }
 						
 						//					Rectangle().fill(Color.white)
 						//						.frame(minHeight: UIScreen.main.bounds.height)
