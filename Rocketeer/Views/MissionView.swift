@@ -159,16 +159,17 @@ struct MissionView: View {
 								.tabViewStyle(PageTabViewStyle())
 							}
 						}
-                        .onAppear(){
-                            DispatchQueue.global().async {
-                                checkpoints.append(Checkpoint(title:"Launch Site", coordinate:mission.coordinate))
-                            }
-                            
-                        }
+                        
 						
 						//					Rectangle().fill(Color.white)
 						//						.frame(minHeight: UIScreen.main.bounds.height)
 					}
+                    .onAppear(){
+                        DispatchQueue.global().async {
+                            checkpoints.append(Checkpoint(title:"Launch Site", coordinate:mission.coordinate))
+                        }
+                        
+                    }
 					
 			
 		}

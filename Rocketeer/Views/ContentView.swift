@@ -120,7 +120,8 @@ struct ContentView: View {
                 favourites = favourites.intersection(missions.map(\.id))
             }
         }
-        .accentColor(Color("accent-orange"))
+//        .accentColor(Color("accent-orange"))
+        .accentColor(.white)
         
     }
     
