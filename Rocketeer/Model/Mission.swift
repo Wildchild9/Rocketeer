@@ -70,7 +70,7 @@ struct Mission: Identifiable, Codable, Hashable {
         case "electron|photon".asRegex:
             return Image("rocketlab-logo")
             
-        case "soyuz|angara".asRegex:
+        case "soyuz|angara|proton".asRegex:
             return Image("roscosmos-logo")
             
         case "falcon".asRegex:
